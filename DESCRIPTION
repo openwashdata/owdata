@@ -1,0 +1,24 @@
+Package: owdata
+Title: Index of openwashdata R Data Packages
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Lars", "Schöbitz", , "lars@lse.de", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-2196-5015")))
+Description: An index and documentation metapackage for the openwashdata
+    collection of R data packages. Ships harvested catalog tables of
+    packages, datasets, and variables as package data, and provides
+    search and install helpers together with a searchable catalog
+    website.
+License: CC BY 4.0
+Depends:
+    R (>= 3.5.0)
+Suggests:
+    testthat (>= 3.0.0)
+Config/Needs/website: rmarkdown, DT
+Config/testthat/edition: 3
+Encoding: UTF-8
+Language: en-GB
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+URL: https://github.com/openwashdata/owdata
+BugReports: https://github.com/openwashdata/owdata/issues
