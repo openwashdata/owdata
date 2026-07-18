@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Premortem: owdata implementation plan</title>
+<style>
+  :root {
+    --bg: #0a0e1a; --panel: #111726; --panel2: #161e30; --text: #d8dee9;
+    --muted: #8a94a7; --line: #232c42; --accent: #5aa9e6;
+    --red: #e05c5c; --orange: #e0a75c; --yellow: #d9c85a; --green: #6cc08b;
+    --purple: #a78bdb; --teal: #5ccfc0; --pink: #d97ba6; --blue: #6a9ce0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: "Segoe UI", system-ui, -apple-system, sans-serif; line-height: 1.55; padding: 2rem 1rem 4rem; }
+  .wrap { max-width: 960px; margin: 0 auto; }
+  h1 { font-size: 1.7rem; margin-bottom: .3rem; }
+  h2 { font-size: 1.25rem; margin: 2.2rem 0 .9rem; border-bottom: 1px solid var(--line); padding-bottom: .4rem; }
+  h3 { font-size: 1.02rem; margin-bottom: .4rem; }
+  p { margin-bottom: .7rem; }
+  .sub { color: var(--muted); font-size: .92rem; margin-bottom: 1.6rem; }
+  .frame { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--accent); padding: .9rem 1.1rem; border-radius: 8px; font-size: .95rem; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 1rem 1.2rem; }
+  .panel h3 { display: flex; align-items: center; gap: .5rem; }
+  .tag { display: inline-block; font-size: .72rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; padding: .15rem .55rem; border-radius: 999px; border: 1px solid; }
+  .matrix { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; margin: .8rem 0; }
+  .cell { border: 1px solid var(--line); border-radius: 8px; padding: .7rem .9rem; min-height: 92px; background: var(--panel2); font-size: .9rem; }
+  .cell b { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: .35rem; }
+  .cell.hot { border-color: var(--red); }
+  .cell.warm { border-color: var(--orange); }
+  .cell.mild { border-color: var(--yellow); }
+  .cell.cool { border-color: var(--green); }
+  ol, ul { margin: 0 0 .8rem 1.3rem; }
+  li { margin-bottom: .45rem; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 1.1rem 1.3rem; margin-bottom: 1.1rem; border-left-width: 4px; border-left-style: solid; }
+  .card .meta { display: flex; gap: .5rem; flex-wrap: wrap; margin: .3rem 0 .8rem; }
+  .card h3 { font-size: 1.05rem; }
+  .lbl { font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: .7rem 0 .2rem; }
+  .story { font-size: .93rem; }
+  .warn li { font-size: .9rem; }
+  .assume { font-size: .93rem; font-style: italic; color: #c9d4e6; }
+  .overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: .7rem; }
+  .ov { background: var(--panel2); border: 1px solid var(--line); border-radius: 8px; padding: .7rem .9rem; font-size: .87rem; }
+  .ov b { display: block; margin-bottom: .2rem; }
+  footer { margin-top: 3rem; color: var(--muted); font-size: .82rem; border-top: 1px solid var(--line); padding-top: 1rem; }
+  code { background: var(--panel2); border: 1px solid var(--line); border-radius: 4px; padding: .05rem .35rem; font-size: .86em; }
+  .hidden-assumption { background: var(--panel); border: 1px solid var(--purple); border-radius: 10px; padding: 1rem 1.2rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>Premortem: the owdata implementation plan</h1>
+
+<p class="sub">openwashdata/owdata, issues #1 to #12 &middot; 8 investigators plus adversarial counter-check &middot; 2026-07-18</p>
+
+<div class="frame">
+Frame: it is July 2027, twelve months out. The owdata index metapackage has failed. There is no trusted live catalog; the Google Sheet is still the org's real index. Eight independent investigations worked backward to explain why.
+</div>
+
+<h2>Synthesis</h2>
+
+<div class="grid2">
+  <div class="panel">
+    <h3><span class="tag" style="color:var(--red);border-color:var(--red)">Most likely</span> Migration stall (R1, driven by R6)</h3>
+
+    <p class="story">About 45 heavyweight reviews (four issues and five PRs each) on one part-time maintainer who is simultaneously rebuilding the review tooling itself. At one review per week the campaign alone consumes the whole horizon, and the grandfather rule hides the stall: legacy rows satisfy the launch metric with zero reviews done.</p>
+  </div>
+  <div class="panel">
+    <h3><span class="tag" style="color:var(--purple);border-color:var(--purple)">Most dangerous</span> No mandate (R8)</h3>
+
+    <p class="story">The plan publicly reclassifies other people's published, DOI-holding work and opens bot PRs into their repos, with no consent, announcement, or objection-handling step in any issue. Capacity problems heal with time; a vetoed policy does not. The safe retreat, declaring tiers informational, guts issues #2, #6, #7, and #10.</p>
+  </div>
+</div>
+
+<h2>Likelihood x impact</h2>
+
+<div class="matrix">
+  <div class="cell hot"><b>High probability, high damage</b>R1 migration stall &middot; R5 two-catalog divergence &middot; R6 solo overcommit &middot; R8 no mandate</div>
+  <div class="cell warm"><b>Medium probability, high damage</b>R2 gamed tier signal &middot; R3 silent harvest rot</div>
+  <div class="cell mild"><b>High probability, medium damage</b>R7 stale package data (mechanism is baked into issue #5)</div>
+  <div class="cell cool"><b>Medium probability, medium damage</b>R4 r-universe cutover breakage</div>
+</div>
+
+<div class="hidden-assumption">
+  <h3>The hidden assumption</h3>
+
+  <p class="story">The plan assumes mechanical signals can substitute for human agreement and human attention. Version plus DOI substitutes for review consent (#2), green schema tests substitute for content correctness (#9), an unowned follow-up substitutes for adoption (#11), and publishing a policy substitutes for ratifying it. The load-bearing sentence is "Version + DOI is a trustworthy mechanical proxy": it is only true if the social process it proxies exists, has capacity, and has been agreed to by the people it governs.</p>
+</div>
+
+<h2>The revised plan</h2>
+
+<ol>
+  <li><b>Ratify before you build</b> (R8, R6). Turn pkgreview issue #20 into a scheduled decision meeting; record written sign-off on the tier policy in the repo before issue #2 merges; announce the scheme to contributors; rename <code>legacy</code> to neutral wording such as "published before the 2026 review standard".</li>
+  <li><b>Give the review request a listener</b> (R2). Move the four-closed-review-issues check into the day-one harvester and auto-open a review-request issue when a package first reaches 0.1.0. A catalogued package failing the check renders as flagged, not catalogued.</li>
+  <li><b>Rescope the migration before launch</b> (R1). Choose now: lightweight retro-review for the 29 legacy packages, or legacy as a permanent honestly labeled tier. Size the campaign to a reviews-per-month target. Do not promise zero legacy rows in twelve months.</li>
+  <li><b>Make the website switchover a launch criterion</b> (R5). No public launch until openwashdata.org reads or prominently links the harvested artifact, with a named owner, a date, and an agreed Google Sheet freeze.</li>
+  <li><b>Gate the harvest on content, not just schema</b> (R3). Alert on week-over-week growth in problems rows, NA DOIs among catalogued packages, or unexplained tier changes; route failures to email; put PAT expiry on a calendar or use an App token.</li>
+  <li><b>Protect washr in the cutover</b> (R4). Hard-code washr and owdata into the packages.json generator with a test; rehearse the cutover with an org owner; verify <code>install.packages("washr")</code> from the universe; consider starting with candidate and catalogued packages only.</li>
+  <li><b>Fix staleness in issue #6, not after launch</b> (R7). Add <code>owd_refresh()</code> reading the live catalog.json, or bump Version on every harvest commit; warn on attach when the installed harvest is over eight weeks old; drop the near-term CRAN ambition.</li>
+</ol>
+
+<h2>Kill criteria</h2>
+
+<ol>
+  <li>No written tier-policy sign-off from the second maintainer by the time Phase 1 code is complete: do not run the first public harvest.</li>
+  <li>Fewer than 4 completed reviews per month in the first two months of the migration campaign: stop and switch to retro-review or permanent-legacy design.</li>
+  <li>60 days after site launch the openwashdata.org data page still renders the Google Sheet with no owdata link: halt Phases 3 and 4 until the switchover lands.</li>
+</ol>
+
+<h2>Pre-launch checklist</h2>
+
+<ul>
+  <li>Tier policy ratified in writing; contributor announcement drafted; legacy flag renamed.</li>
+  <li>Harvester verifies four closed review issues for every non-legacy catalogued package, with a test.</li>
+  <li>packages.json includes washr and owdata by construction, with a test; cutover rehearsed; washr install verified.</li>
+  <li>Harvest alerts on content regressions and reaches a human channel; PAT expiry handled.</li>
+  <li>Website switchover PR exists with owner and date; sheet freeze date agreed.</li>
+  <li>Staleness mechanism (refresh or per-harvest version bump plus attach warning) tested.</li>
+</ul>
+
+<h2>The eight failure modes</h2>
+
+<div class="card" style="border-left-color: var(--red)">
+  <h3>R1. The migration campaign stalls</h3>
+
+  <div class="meta"><span class="tag" style="color:var(--red);border-color:var(--red)">Probability: high</span><span class="tag" style="color:var(--red);border-color:var(--red)">Damage: high</span></div>
+  <p class="story">The arithmetic was visible from day one and nobody ran it: ~45 reviews, each four issues and five PRs with human sign-offs, on one part-time person. The campaign paused in October 2026 "until pkgreview v1.3.0 lands" and the pause became the default state, because the harvest hummed and the catalog looked done. The grandfather rule made stalling invisible: legacy rows counted as catalogued, so the launch metric was met with roughly 5 of 45 reviews finished. By July 2027, 0.1.0 meant joining a two-year backlog.</p>
+  <div class="lbl">Underlying assumption</div>
+  <p class="assume">A review process designed for occasional one-at-a-time gating can be run 45 times as a batch campaign by one part-time person without changing the process.</p>
+  <div class="lbl">Early warnings</div>
+  <ul class="warn"><li>Fewer than 4 reviews completed in any month after campaign start.</li><li>The legacy row count not decreasing across two consecutive weekly harvests.</li></ul>
+</div>
+
+<div class="card" style="border-left-color: var(--orange)">
+  <h3>R2. The 0.1.0 review-request signal has no listener</h3>
+
+  <div class="meta"><span class="tag" style="color:var(--orange);border-color:var(--orange)">Probability: medium</span><span class="tag" style="color:var(--red);border-color:var(--red)">Damage: high</span></div>
+  <p class="story">Contributors followed the vignette, bumped to 0.1.0, and waited; nothing watched for the bump, and the requests were discovered by accident six weeks later. A contributor who tired of waiting bumped straight to 1.0.0, ran the standard Zenodo release, and got a catalogued badge, because the four-closed-review-issues check was deferred as optional hardening. With 29 legacy packages already showing catalogued badges without review, self-promotion looked normal. The tier column ended up mixing reviewed, grandfathered, and self-promoted packages indistinguishably.</p>
+  <div class="lbl">Underlying assumption</div>
+  <p class="assume">A version number can function as both a request and a gate in an org where nobody watches versions and nothing but norms prevents writing 1.0.0.</p>
+  <div class="lbl">Early warnings</div>
+  <ul class="warn"><li>Any package at 0.1.0 or above for 14 days with zero pkgreview issues opened.</li><li>Any post-cutoff catalogued package lacking four closed review issues; the first nonzero harvest count is the alarm.</li></ul>
+</div>
+
+<div class="card" style="border-left-color: var(--teal)">
+  <h3>R3. Silent harvest rot</h3>
+
+  <div class="meta"><span class="tag" style="color:var(--orange);border-color:var(--orange)">Probability: medium-high</span><span class="tag" style="color:var(--red);border-color:var(--red)">Damage: high</span></div>
+  <p class="story">A washr template update introduced a dictionary format no fixture covered; the hardened parsers did their job by not aborting, quietly shunting packages into the problems tibble and half-parsing others into NA DOIs. Five failures out of 72 sat under the 10 percent tripwire, schema tests assert names and types but never values, so CI stayed green and the bot published wrong rows weekly. The PAT expired in November; the auto-opened harvest-failure issue collected bot comments and zero human views. The catalog was visibly wrong for six months before an outside researcher emailed. Near-zero maintenance had meant near-zero observation.</p>
+  <div class="lbl">Underlying assumption</div>
+  <p class="assume">Absence of pipeline errors implies correctness of published content; silent degradation was designed in with no human required to look.</p>
+  <div class="lbl">Early warnings</div>
+  <ul class="warn"><li>Problems-tibble rows or NA rates trending up week-over-week in the git history of the committed tables.</li><li>A harvest-failure issue open more than 14 days with only bot comments.</li></ul>
+</div>
+
+<div class="card" style="border-left-color: var(--blue)">
+  <h3>R4. The r-universe cutover breaks distribution</h3>
+
+  <div class="meta"><span class="tag" style="color:var(--yellow);border-color:var(--yellow)">Probability: medium</span><span class="tag" style="color:var(--yellow);border-color:var(--yellow)">Damage: medium</span></div>
+  <p class="story">The custom registry went live before the org owner installed the GitHub App and minted the PAT, and it superseded the auto-generated registry immediately. The "washr MUST be listed" note lived in the plan, not in the harvester code: washr vanished from the universe, then returned tracking a mid-refactor default branch. Thirty dev-tier packages went red at once on the page owd_install() advertises. Five months in, the 90-day PAT expired silently and the registry drifted from the harvester's packages.json for four months; the site listed packages whose installs returned 404.</p>
+  <div class="lbl">Underlying assumption</div>
+  <p class="assume">Registry correctness is a one-time setup task rather than a monitored dependency, and the maintainer controls all the org-level levers it requires.</p>
+  <div class="lbl">Early warnings</div>
+  <ul class="warn"><li>Registry packages.json differing from the harvester's copy for over a week, or a failed sync run.</li><li>washr's universe build not matching its release tag; dashboard failure rate over 25 percent.</li></ul>
+</div>
+
+<div class="card" style="border-left-color: var(--pink)">
+  <h3>R5. Two-catalog divergence, no adoption</h3>
+
+  <div class="meta"><span class="tag" style="color:var(--red);border-color:var(--red)">Probability: high</span><span class="tag" style="color:var(--red);border-color:var(--red)">Damage: high</span></div>
+  <p class="story">The site shipped everything promised, but the website switchover was explicitly non-blocking, lived in a repo outside the issue list, and had no owner, so it entered nobody's queue. openwashdata.org kept rendering the Google Sheet's 56 published packages while owdata claimed 32 catalogued, 29 of them flagged legacy; users who saw both trusted neither. Maintainers kept updating the sheet because that is what the website rendered, and the two catalogs drifted apart. The killer-feature variable search got dozens of monthly visitors, mostly the team.</p>
+  <div class="lbl">Underlying assumption</div>
+  <p class="assume">Building a better catalog would on its own make it the catalog; switchover would happen without an owner, a date, or a plan.</p>
+  <div class="lbl">Early warnings</div>
+  <ul class="warn"><li>30 days post-launch: switchover issue unassigned and zero links from the openwashdata.org data page.</li><li>Google Sheet edits continuing after launch; each one is a vote for the old catalog.</li></ul>
+</div>
+
+<div class="card" style="border-left-color: var(--yellow)">
+  <h3>R6. Solo-capacity overcommit</h3>
+
+  <div class="meta"><span class="tag" style="color:var(--red);border-color:var(--red)">Probability: high</span><span class="tag" style="color:var(--red);border-color:var(--red)">Damage: high</span></div>
+  <p class="story">Phases 1 and 2 shipped fast because AI-assisted solo coding fits between other commitments. Then pkgreview's own three-milestone overhaul opened in September 2026 and consumed the coordination bandwidth phases 3 to 5 needed. The pipeline discussion with the colleague never became a meeting, so registering 70 packages under an unratified policy felt presumptuous and waited; the migration deferred itself behind the pkgreview rebuild; the unowned switchover defaulted to the old site. Working code, dead project.</p>
+  <div class="lbl">Underlying assumption</div>
+  <p class="assume">Demonstrated throughput on solo coding phases transfers to coordination-heavy phases running concurrently with two other roadmapped projects.</p>
+  <div class="lbl">Early warnings</div>
+  <ul class="warn"><li>Phase 3 with zero commits or comments 30 days after Phase 2 closes.</li><li>The pipeline discussion issue passing 60 days with no scheduled decision.</li></ul>
+</div>
+
+<div class="card" style="border-left-color: var(--green)">
+  <h3>R7. Wrong distribution model for a living index</h3>
+
+  <div class="meta"><span class="tag" style="color:var(--red);border-color:var(--red)">Probability: high</span><span class="tag" style="color:var(--yellow);border-color:var(--yellow)">Damage: medium</span></div>
+  <p class="story">use_data() welded a weekly-changing catalog to the install lifecycle. The team saw freshness because they looked at the site; users looked at owd_packages() from a library installed months earlier, and owd_search() missed everything since. Nothing bumped Version on harvest commits, so update.packages() saw nothing to update, and two users on the same version filed contradictory, both-correct bug reports. A CRAN release would freeze one snapshot for months. A workshop instructor eventually told attendees to use the website because the package is out of date.</p>
+  <div class="lbl">Underlying assumption</div>
+  <p class="assume">Users would reinstall the package roughly as often as the data changed.</p>
+  <div class="lbl">Early warnings</div>
+  <ul class="warn"><li>Median installed-harvest age exceeding four weeks.</li><li>First issue reporting "exists on the site but not in owd_packages()", or same-version installs disagreeing.</li></ul>
+</div>
+
+<div class="card" style="border-left-color: var(--purple)">
+  <h3>R8. No mandate: governance without consent (counter-check finding)</h3>
+
+  <div class="meta"><span class="tag" style="color:var(--orange);border-color:var(--orange)">Probability: medium-high</span><span class="tag" style="color:var(--red);border-color:var(--red)">Damage: highest</span></div>
+  <p class="story">The tier policy ships as code before anyone outside the plan author agrees to it, hard-coding a pipeline decision the second maintainer has not ratified. The first harvest publicly reclassifies 29 DOI-holding packages as legacy and 16 as unreviewed candidates, in an ETH-branded index their authors were never told about. The migration then opens scripted version-bump PRs into contributors' repos, an author act with real side effects (new DOIs, changed citations). Objections force the safe retreat, tiers become informational, which guts issues #2, #6, #7, and #10. Not stalled: vetoed.</p>
+  <div class="lbl">Underlying assumption</div>
+  <p class="assume">Publishing a classification scheme for other people's work is a technical act rather than a governance act requiring their consent.</p>
+  <div class="lbl">Early warnings</div>
+  <ul class="warn"><li>Issue #2 merging while the pipeline thread with the second maintainer is unresolved.</li><li>Contributors' first contact with the tier system being a bot PR or a legacy flag, followed by "who authorized this" comments and unmerged bump PRs.</li></ul>
+</div>
+
+<h2>Run overview</h2>
+
+<div class="overview">
+  <div class="ov"><b>7 investigators</b>one per failure reason, run independently and in parallel</div>
+  <div class="ov"><b>1 adversarial counter-check</b>found R8, the missing governance failure</div>
+  <div class="ov"><b>8 failure modes</b>4 in the high-probability, high-damage quadrant</div>
+  <div class="ov"><b>Inputs</b>owdata issues #1 to #12, repo state, pkgreview roadmap context</div>
+</div>
+
+<footer>
+Premortem of the owdata implementation plan (openwashdata/owdata issues #1 to #12), generated 2026-07-18. Frame: July 2027, plan has failed. Full deep dives in docs/premortem-transcript-2026-07-18.md.
+</footer>
+
+</div>
+</body>
+</html>
