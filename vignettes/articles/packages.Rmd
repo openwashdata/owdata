@@ -1,0 +1,34 @@
+---
+title: "Catalog"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+The catalog lists every openwashdata data package by tier. Catalogued
+packages have completed the openwashdata review and carry a Zenodo DOI;
+candidate packages have requested review and are shown unreviewed.
+
+```{r}
+library(owdata)
+
+reviewed <- owd_packages(tier = c("catalogued", "candidate"))
+DT::datatable(
+  reviewed[, c("pkg_name", "title", "tier", "version", "doi", "url_docs")],
+  rownames = FALSE,
+  options = list(pageLength = 25)
+)
+```
+
+Packages still in development are listed for transparency; no dataset
+or variable detail is harvested for them.
+
+```{r}
+dev <- owd_packages(tier = "dev")
+DT::datatable(
+  dev[, c("pkg_name", "title", "version", "url_github")],
+  rownames = FALSE,
+  options = list(pageLength = 10)
+)
+```

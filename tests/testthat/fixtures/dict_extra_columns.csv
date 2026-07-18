@@ -1,0 +1,2 @@
+directory,file_name,variable_name,variable_type,description,unit_type,error
+data,wp.rda,id,integer,Unique identifier,count,none

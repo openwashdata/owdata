@@ -4,3 +4,6 @@
 ^docs$
 ^pkgdown$
 ^\.github$
+^data-raw$
+^vignettes/articles$
+^LICENSE\.md$

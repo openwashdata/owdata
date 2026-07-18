@@ -1,0 +1,48 @@
+---
+title: "Versioning policy"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+Catalog inclusion is decided by a mechanical version signal tied to the
+openwashdata package review process
+([pkgreview](https://github.com/openwashdata/pkgreview)), not by a
+manually maintained list.
+
+## The tiers
+
+| Tier | Mechanical signal | Meaning |
+|---|---|---|
+| dev | Version 0.0.x or 0.0.0.9000 | Listed in `owd_packages()` only; no dataset or variable detail in the catalog |
+| candidate | 0.1.0 up to below 1.0.0 | Bumping to 0.1.0 is the review request; datasets and variables are harvested and shown, labelled unreviewed |
+| catalogued | Version 1.0.0 or above plus a Zenodo DOI in CITATION.cff | The package review is complete; the reviewer authorizes the 1.0.0 bump; the Zenodo release is minted |
+
+## How a maintainer moves a package between tiers
+
+1. Develop on 0.0.x versions. The package appears in the catalog's
+   package list but without dataset detail.
+
+2. When the package meets the publication floor (dictionary complete,
+   data documented, README building), bump the version to 0.1.0. This
+   is the review request. The review team opens the four pkgreview
+   issues against the package.
+
+3. Pass the review. The reviewer authorizes the bump to 1.0.0, the
+   release is created, and Zenodo mints the DOI. The next harvest
+   moves the package to the catalogued tier.
+
+## Transitional legacy flag
+
+Packages published before this policy existed hold a Zenodo DOI at a
+version below 1.0.0. They are shown as catalogued with a `legacy` flag
+until they complete a review and receive their 1.0.0 bump. The flag
+records review status under the current standard; it does not lower
+the standing of the published, citable dataset.
+
+## Overrides
+
+`data-raw/tier_overrides.csv` is the escape hatch for cases the
+mechanical rule gets wrong. It is kept near-empty, and every entry
+carries a reason.

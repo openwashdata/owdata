@@ -1,0 +1,23 @@
+---
+title: "Variables"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+The full cross-org variable dictionary: every variable documented in
+the data dictionaries of candidate- and catalogued-tier packages,
+searchable in one table. Use the search box to find every documented
+variable across the organisation.
+
+```{r}
+library(owdata)
+
+DT::datatable(
+  owd_variables(),
+  rownames = FALSE,
+  filter = "top",
+  options = list(pageLength = 50)
+)
+```

@@ -1,0 +1,3 @@
+directory,file_name,variable_name,variable_type,description
+data,waterpoints.rda,id,integer,Unique identifier
+data,waterpoints.rda,status,character,Functional status

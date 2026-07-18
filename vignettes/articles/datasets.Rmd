@@ -1,0 +1,21 @@
+---
+title: "Datasets"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+Every dataset shipped by candidate- and catalogued-tier packages, with
+row and variable counts and direct download links to the CSV and XLSX
+exports for non-R users.
+
+```{r}
+library(owdata)
+
+DT::datatable(
+  owd_datasets(),
+  rownames = FALSE,
+  options = list(pageLength = 25)
+)
+```

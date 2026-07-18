@@ -1,0 +1,38 @@
+directory,file_name,variable_name,variable_type,description
+data,owd_packages.rda,pkg_name,character,Name of the R data package as given in its DESCRIPTION file.
+data,owd_packages.rda,title,character,Title of the package from the DESCRIPTION Title field.
+data,owd_packages.rda,description,character,One-paragraph description of the package from the DESCRIPTION Description field with whitespace collapsed.
+data,owd_packages.rda,version,character,Package version from DESCRIPTION with any leading v stripped.
+data,owd_packages.rda,tier,factor,Catalog tier assigned by the version-tier policy with levels dev then candidate then catalogued.
+data,owd_packages.rda,legacy,logical,Whether the package was catalogued through the transitional grandfather rule rather than a completed review.
+data,owd_packages.rda,maintainer,character,Name of the package maintainer taken from the Authors@R person with the cre role.
+data,owd_packages.rda,maintainer_orcid,character,ORCID identifier of the maintainer when present in Authors@R.
+data,owd_packages.rda,authors,character,All authors with aut or cre roles collapsed into one string separated by semicolons.
+data,owd_packages.rda,license,character,License of the package from the DESCRIPTION License field.
+data,owd_packages.rda,date,Date,Date given in the DESCRIPTION Date field when present.
+data,owd_packages.rda,doi,character,Zenodo DOI recorded in the package CITATION.cff file when present.
+data,owd_packages.rda,cff_version,character,Version recorded in CITATION.cff used as a drift diagnostic against the DESCRIPTION version.
+data,owd_packages.rda,url_github,character,URL of the package repository on GitHub.
+data,owd_packages.rda,url_docs,character,URL of the package documentation website.
+data,owd_packages.rda,n_datasets,integer,Number of datasets shipped in the package data directory.
+data,owd_packages.rda,latest_release,character,Tag name of the latest GitHub release when one exists.
+data,owd_packages.rda,default_branch,character,Default branch of the package repository.
+data,owd_packages.rda,created_at,Date,Date the package repository was created on GitHub.
+data,owd_packages.rda,last_commit,Date,Date of the most recent push to the package repository.
+data,owd_packages.rda,topics,character,GitHub repository topics collapsed into one string separated by semicolons.
+data,owd_packages.rda,has_dictionary,logical,Whether the package ships a data-raw dictionary.csv file.
+data,owd_packages.rda,has_extdata,logical,Whether the package ships export files in inst/extdata.
+data,owd_datasets.rda,pkg_name,character,Name of the package the dataset belongs to.
+data,owd_datasets.rda,dataset_name,character,Name of the dataset taken from its rda file name.
+data,owd_datasets.rda,title,character,Title of the dataset from the first line of its roxygen documentation.
+data,owd_datasets.rda,description,character,Description of the dataset from its roxygen documentation before the format tag.
+data,owd_datasets.rda,n_rows,integer,Number of rows stated in the roxygen format tag.
+data,owd_datasets.rda,n_vars,integer,Number of variables stated in the roxygen format tag.
+data,owd_datasets.rda,n_vars_dictionary,integer,Number of rows for this dataset in the package dictionary used as a cross check.
+data,owd_datasets.rda,csv_url,character,Direct download URL of the CSV export when the package ships one.
+data,owd_datasets.rda,xlsx_url,character,Direct download URL of the XLSX export when the package ships one.
+data,owd_variables.rda,pkg_name,character,Name of the package the variable belongs to.
+data,owd_variables.rda,dataset_name,character,Name of the dataset the variable belongs to.
+data,owd_variables.rda,variable_name,character,Name of the variable as given in the package dictionary.
+data,owd_variables.rda,variable_type,character,Type of the variable as given in the package dictionary.
+data,owd_variables.rda,description,character,Plain language description of the variable from the package dictionary.
