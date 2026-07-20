@@ -1,0 +1,44 @@
+---
+title: "Datasets"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, comment = "#>", echo = FALSE,
+  warning = FALSE, message = FALSE
+)
+```
+
+```{r}
+library(owdata)
+library(DT)
+
+ds <- owd_datasets()
+pk <- owd_packages()
+docs <- pk$url_docs[match(ds$pkg_name, pk$pkg_name)]
+
+link <- function(text, url) {
+  ifelse(is.na(url), ifelse(is.na(text), "", text), sprintf('<a href="%s">%s</a>', url, text))
+}
+```
+
+Every dataset shipped by a catalogued or candidate package, with row and variable counts parsed from the package documentation and direct download links to the CSV and XLSX exports where the package provides them. Install any package with `owd_install()` to load the data in R instead.
+
+## All datasets
+
+```{r}
+datatable(
+  data.frame(
+    Package = link(ds$pkg_name, docs),
+    Dataset = ds$dataset_name,
+    Title = ds$title,
+    Rows = ds$n_rows,
+    Variables = ds$n_vars,
+    CSV = link(ifelse(is.na(ds$csv_url), NA, "csv"), ds$csv_url),
+    XLSX = link(ifelse(is.na(ds$xlsx_url), NA, "xlsx"), ds$xlsx_url),
+    check.names = FALSE
+  ),
+  escape = FALSE, rownames = FALSE, filter = "top",
+  options = list(pageLength = 25)
+)
+```

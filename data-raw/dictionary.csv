@@ -1,0 +1,38 @@
+directory,file_name,variable_name,variable_type,description
+inst/extdata/,owd_packages.csv,pkg_name,character,Package name from the DESCRIPTION Package field.
+inst/extdata/,owd_packages.csv,title,character,Package title from the DESCRIPTION Title field.
+inst/extdata/,owd_packages.csv,description,character,Package description from DESCRIPTION with whitespace collapsed.
+inst/extdata/,owd_packages.csv,version,character,Package version from DESCRIPTION with a leading v stripped.
+inst/extdata/,owd_packages.csv,tier,character,Catalog tier assigned by the version policy: dev or candidate or catalogued.
+inst/extdata/,owd_packages.csv,legacy,logical,TRUE for packages published with a DOI before the 2026 review standard.
+inst/extdata/,owd_packages.csv,maintainer,character,Maintainer name taken from the Authors@R person with role cre.
+inst/extdata/,owd_packages.csv,maintainer_orcid,character,ORCID identifier of the maintainer where recorded.
+inst/extdata/,owd_packages.csv,authors,character,All authors with role aut or cre collapsed with semicolons.
+inst/extdata/,owd_packages.csv,license,character,License from the DESCRIPTION License field.
+inst/extdata/,owd_packages.csv,date,date,Date from the DESCRIPTION Date field where present.
+inst/extdata/,owd_packages.csv,doi,character,Zenodo DOI from CITATION.cff where present.
+inst/extdata/,owd_packages.csv,cff_version,character,Version recorded in CITATION.cff used as a drift diagnostic.
+inst/extdata/,owd_packages.csv,url_github,character,GitHub repository URL of the package.
+inst/extdata/,owd_packages.csv,url_docs,character,Documentation website URL of the package.
+inst/extdata/,owd_packages.csv,n_datasets,integer,Number of rda files shipped in the data directory.
+inst/extdata/,owd_packages.csv,latest_release,character,Tag of the latest GitHub release where one exists.
+inst/extdata/,owd_packages.csv,default_branch,character,Default branch of the GitHub repository.
+inst/extdata/,owd_packages.csv,created_at,date,Repository creation date from the GitHub API.
+inst/extdata/,owd_packages.csv,last_commit,date,Date of the most recent push to the default branch.
+inst/extdata/,owd_packages.csv,topics,character,GitHub repository topics collapsed with commas.
+inst/extdata/,owd_packages.csv,has_dictionary,logical,TRUE when data-raw/dictionary.csv exists in the repository.
+inst/extdata/,owd_packages.csv,has_extdata,logical,TRUE when inst/extdata contains exported files.
+inst/extdata/,owd_datasets.csv,pkg_name,character,Package that ships the dataset.
+inst/extdata/,owd_datasets.csv,dataset_name,character,Dataset name derived from the rda file name.
+inst/extdata/,owd_datasets.csv,title,character,Dataset title from the first line of its roxygen documentation.
+inst/extdata/,owd_datasets.csv,description,character,Dataset description from the roxygen body before the format tag.
+inst/extdata/,owd_datasets.csv,n_rows,integer,Row count parsed from the roxygen format line.
+inst/extdata/,owd_datasets.csv,n_vars,integer,Variable count parsed from the roxygen format line.
+inst/extdata/,owd_datasets.csv,n_vars_dictionary,integer,Number of dictionary rows describing this dataset used as a cross check.
+inst/extdata/,owd_datasets.csv,csv_url,character,Direct download URL of the CSV export where one exists.
+inst/extdata/,owd_datasets.csv,xlsx_url,character,Direct download URL of the XLSX export where one exists.
+inst/extdata/,owd_variables.csv,pkg_name,character,Package that documents the variable.
+inst/extdata/,owd_variables.csv,dataset_name,character,Dataset the variable belongs to.
+inst/extdata/,owd_variables.csv,variable_name,character,Variable name from the package dictionary.
+inst/extdata/,owd_variables.csv,variable_type,character,Variable type from the package dictionary.
+inst/extdata/,owd_variables.csv,description,character,Variable description from the package dictionary.

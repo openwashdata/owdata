@@ -1,0 +1,61 @@
+Package: washmalawi
+Title: WASH Household Level Survey Data 2018 - 2023
+Version: 1.0.1
+Authors@R: c(
+    person("Emmanuel", "Mhango", , "emmanuellmhango@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-3197-6244")),
+    person("Donald", "Robertson", role = "aut"),
+    person("Chifundo", "Mandala", role = "aut"),
+    person("M", "Nzengo", role = "aut"),
+    person("Muthi", "Nhlema", role = "aut"),
+    person("M.", "Banda", role = "aut"),
+    person("Khumbo", "Zinyongo", role = "aut"),
+    person("Christian", "Nedi", role = "aut"),
+    person("Leman", "Ngwena", role = "aut"),
+    person("M", "Kazembe", role = "aut"),
+    person("Yankho", "Mthindi", role = "aut"),
+    person("E.", "Mofolo", role = "aut"),
+    person("Jeffrey", "Bauleni", role = "aut"),
+    person("Khallen", "Malliot", role = "aut"),
+    person("Thandi", "Mtemangombe", role = "aut"),
+    person("Tamandani", "Tembo", role = "aut"),
+    person("Samuel", "Mlenga", role = "aut"),
+    person("Dufter", "Joshua", role = "aut"),
+    person("Andrew", "Mthunzi", role = "aut"),
+    person("Martha", "Kafuwa", role = "aut"),
+    person("Takondwa", "Tembo", role = "aut"),
+    person("Peter", "Singogo", role = "aut"),
+    person("Goodwin", "Mkandawire", role = "aut"),
+    person("Monica", "Msiska", role = "aut"),
+    person("Lemekezani", "Chilora", role = "aut"),
+    person("Tendai", "Jambo", role = "aut"),
+    person("William", "Kanyinji", role = "aut"),
+    person("Chikondi", "Kanyinji", role = "aut"),
+    person("Madalitso", "Kamamkhudza", role = "aut"),
+    person("Sylvia", "Siliya", role = "aut"),
+    person("Edward", "K Gadi", role = "aut"),
+    person("Buli", "Echika", role = "aut"),
+    person("Sunganani", "Monjeza", role = "aut"),
+    person("Derick", "Macheke", role = "aut"),
+    person("Fatsani", "Chinawa", role = "aut"),
+    person("Jonathan", "Sunthika", role = "aut"),
+    person("Precious", "Phiri", role = "aut"),
+    person("Bright", "Mphero", role = "aut"),
+    person("Rodney", "Kananji", role = "aut")
+  )
+Description: This package provides access to Water, Sanitation, and Hygiene (WASH) household-level survey data collected in Malawi between 2018 and 2023. The dataset includes comprehensive indicators for monitoring WASH-related Sustainable Development Goals at the household level.
+License: CC BY 4.0
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Depends: 
+    R (>= 3.5)
+LazyData: true
+Language: en-GB
+Config/Needs/website: rmarkdown
+Date: 2025-04-30
+URL: https://github.com/openwashdata/washmalawi
+BugReports: https://github.com/openwashdata/washmalawi/issues
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

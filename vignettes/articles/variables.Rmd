@@ -1,0 +1,36 @@
+---
+title: "Variable dictionary"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, comment = "#>", echo = FALSE,
+  warning = FALSE, message = FALSE
+)
+```
+
+```{r}
+library(owdata)
+library(DT)
+
+vr <- owd_variables()
+```
+
+The full cross-package variable dictionary: every documented variable in every catalogued and candidate openwashdata package, harvested from each package's `data-raw/dictionary.csv`. Use the search box to find every dataset in the organization that documents a given concept, for example "groundwater", "latrine" or "chlorine". The same search is available in R as `owd_search("groundwater")`.
+
+## All variables
+
+```{r}
+datatable(
+  data.frame(
+    Package = vr$pkg_name,
+    Dataset = vr$dataset_name,
+    Variable = vr$variable_name,
+    Type = vr$variable_type,
+    Description = vr$description,
+    check.names = FALSE
+  ),
+  rownames = FALSE, filter = "top",
+  options = list(pageLength = 25)
+)
+```

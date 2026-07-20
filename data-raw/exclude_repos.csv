@@ -1,0 +1,13 @@
+repo_name,reason
+data,not an R package
+jmpinput,not an R package
+joshwaterjobs,not an R package
+analytics,not an R package
+test,not an R package
+positcloud,not an R package
+owdata,this package indexes the others
+washr,publication toolkit not a data package
+fairenough,publication toolkit not a data package
+pkgreview,review process repo not a data package
+website,org website not a data package
+openwashdata.r-universe.dev,r-universe registry not a data package

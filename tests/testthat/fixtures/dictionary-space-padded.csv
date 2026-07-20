@@ -1,0 +1,20 @@
+directory, file_name, variable_name, variable_type, description
+data, basisghana.rda, no, integer, A running id for unique for each region.
+data, basisghana.rda, region, character, First level of subnational government administration within the Republic of Ghana.
+data, basisghana.rda, district, character, Second level administrative subdivision below region.
+data, basisghana.rda, area_council, character, Third level administrative unit below district level.
+data, basisghana.rda, community, character, Open defecation free (ODF) community. The community is the smallest level of local administration in Ghana (also called unit committees).
+data, basisghana.rda, partner, character, Implementing partner of the CLTS (Community-Led Total Sanitation) program in the respective community.
+data, basisghana.rda, population, double, Population size of the respective community.
+data, basisghana.rda, households, double, Number of households in the respective community.
+data, basisghana.rda, toilets, double, Number of toilets in the respective community.
+data, basisghana.rda, hwf, double, Number of handwashing facilities in the respective community.
+data, ghanapop.rda, country_en, character, The English name denoting the country where the data was gathered (Ghana).
+data, ghanapop.rda, country_pcode, character,The ISO2 code representing Ghana (country of data collection).
+data, ghanapop.rda, region_en, character, The English designation specifying the region within Ghana. (Ghana comprises 16 distinct regions.)
+data, ghanapop.rda, region_pcode, character, The postal code linked to the specific region.
+data, ghanapop.rda, district_en, character,The English name identifying the district in Ghana. (There are 261 districts in Ghana.)
+data, ghanapop.rda, district_pcode, character, The postal code specific to the district.
+data, ghanapop.rda, female_pop, double, Total female population within the corresponding District.
+data, ghanapop.rda, male_pop, double, Total male population within the corresponding District.
+data, ghanapop.rda, total_pop, double, Total population within the corresponding District.

@@ -1,0 +1,32 @@
+Package: waterpointstatus
+Title: Water Point Functionality and Service Delivery Monitoring Dataset - 2023
+Version: v1.0.0
+Authors@R: c(
+    person("Emmanuel", "Mhango", , "emmanuellmhango@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-3197-6244")),
+    person("Emmanuel", "Kamanga", role = "ctb"),
+    person("Soldier", "Zammimba", role = "ctb"),
+    person("Lackson", "Ngasale", role = "ctb"),
+    person("Dickson", "Chitonya", role = "ctb"),
+    person("Joseph", "Chilembwe", role = "ctb"),
+    person("Phillip", "Kamanga", role = "ctb"),
+    person("Alex", "Makwinja", role = "ctb"),
+    person("Michael", "Kwenda", role = "ctb"),
+    person("Maureen", "Nyadani", role = "ctb"),
+    person("Dickson", "Daudi", role = "ctb"),
+    person("Emmanuel", "Nkhonjera", role = "ctb"),
+    person("Rodney", "Kananji", role = "ctb")
+  )
+Description: This dataset contains structured field survey responses collected from water point inspections and interviews with community members or water point committee representatives. Each record represents a single survey event linked to a specific water point, including GPS coordinates, enumerator metadata, timestamps, and detailed observations on infrastructure condition, functionality, water availability, maintenance practices, and governance arrangements.
+License: CC BY 4.0
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends: 
+    R (>= 3.5)
+LazyData: true
+Language: en-GB
+Config/Needs/website: rmarkdown
+Date: 2026-04-10
+URL: https://github.com/openwashdata/waterpointstatus
+BugReports: https://github.com/openwashdata/waterpointstatus/issues

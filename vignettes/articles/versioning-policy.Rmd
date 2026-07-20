@@ -1,0 +1,39 @@
+---
+title: "Versioning policy"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+Catalog inclusion is decided by a mechanical version signal tied to the openwashdata package review process, not by a manually maintained list. The harvester reads each package's `DESCRIPTION` version and `CITATION.cff` DOI once a week and assigns a tier.
+
+## The tiers
+
+| Tier | Mechanical signal | Meaning |
+|---|---|---|
+| dev | Version below 0.1.0 (for example 0.0.0.9000 or 0.0.1) | Listed in the package catalog for transparency; no dataset or variable detail is harvested |
+| candidate | 0.1.0 or higher, below 1.0.0 | Bumping to 0.1.0 is the review request. Datasets and variables are harvested and shown, labelled unreviewed |
+| catalogued | 1.0.0 or higher and a Zenodo DOI (10.5281/zenodo.*) in CITATION.cff | Review completed, the reviewer authorized the 1.0.0 bump, and a Zenodo release was minted |
+
+## How a maintainer moves a package between tiers
+
+1. Develop at 0.0.x. Fill `data-raw/dictionary.csv` and document every dataset; the catalog quality checks (`has_dictionary`, dictionary versus documented dimensions) are visible in `owd_packages()`.
+
+2. Bump to 0.1.0 when the package is ready for review. This version bump is the review request under the [pkgreview](https://github.com/openwashdata/pkgreview) process. The package now appears in the catalog with dataset and variable detail.
+
+3. Pass review. Only a completed review authorizes the bump to 1.0.0. After the bump, run `washr::update_citation()` so `CITATION.cff` and `inst/CITATION` match, tag a GitHub release, and publish the Zenodo release that mints the DOI.
+
+4. At 1.0.0 with a DOI the package is catalogued.
+
+## Packages published before the 2026 review standard
+
+Around 29 packages were published with a Zenodo DOI before this policy existed, under the earlier convention where a listing in the organization spreadsheet meant published. A transitional rule keeps them in the catalogued tier: a Zenodo DOI with a version below 1.0.0 counts as catalogued, flagged in the catalog as published before the 2026 review standard (the `legacy` column). The flag is removed per package as each one passes review and receives its 1.0.0 bump; the rule itself is deleted when the migration campaign completes.
+
+## Overrides
+
+`data-raw/tier_overrides.csv` in the owdata repository is the escape hatch for packages the mechanical rule misclassifies, for example a withdrawn dataset. Each row records the package, the forced tier and the reason. The file is kept near-empty by design; if it grows, the policy is wrong and should be changed instead.
+
+## Where the policy is implemented
+
+The rules live in `R/tier_policy.R` of the owdata package as pure, unit-tested functions. The weekly harvest applies them to every repository in the organization; nothing is assigned by hand.

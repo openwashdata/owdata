@@ -1,0 +1,77 @@
+---
+title: "Package catalog"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE, comment = "#>", echo = FALSE,
+  warning = FALSE, message = FALSE
+)
+```
+
+```{r}
+library(owdata)
+library(DT)
+
+pk <- owd_packages()
+harvested <- format(getFromNamespace("owd_active_catalog", "owdata")()$meta$harvest_date)
+
+link <- function(text, url) {
+  ifelse(is.na(url) | is.na(text), text, sprintf('<a href="%s">%s</a>', url, text))
+}
+badge <- function(tier, legacy) {
+  cls <- c(dev = "secondary", candidate = "warning", catalogued = "success")[as.character(tier)]
+  out <- sprintf('<span class="badge bg-%s">%s</span>', cls, tier)
+  ifelse(
+    legacy,
+    paste(out, '<span class="badge bg-light text-dark" title="Published with a DOI before the 2026 review standard">pre-2026 standard</span>'),
+    out
+  )
+}
+```
+
+The table lists every openwashdata package in the catalogued and candidate tiers, harvested from the openwashdata GitHub organization on `r harvested`. Catalogued packages have passed review and carry a Zenodo DOI. Candidate packages have requested review by reaching version 0.1.0 and are shown unreviewed. Packages marked "pre-2026 standard" were published with a DOI before the current review policy existed; see the [versioning policy](versioning-policy.html).
+
+## Catalogued and candidate packages
+
+```{r}
+main <- pk[pk$tier %in% c("catalogued", "candidate"), ]
+datatable(
+  data.frame(
+    Package = link(main$pkg_name, main$url_docs),
+    Tier = badge(main$tier, main$legacy),
+    Title = main$title,
+    Version = main$version,
+    Datasets = main$n_datasets,
+    DOI = link(main$doi, ifelse(is.na(main$doi), NA, paste0("https://doi.org/", main$doi))),
+    GitHub = link("repo", main$url_github),
+    check.names = FALSE
+  ),
+  escape = FALSE, rownames = FALSE, filter = "top",
+  options = list(pageLength = 25, order = list(list(1, "desc")))
+)
+```
+
+## Packages in development
+
+Packages below version 0.1.0 are listed for transparency. Their datasets and variables are not part of the catalog until they reach the candidate tier.
+
+<details>
+<summary>Show packages in development</summary>
+
+```{r}
+dev <- pk[pk$tier == "dev", ]
+datatable(
+  data.frame(
+    Package = link(dev$pkg_name, dev$url_github),
+    Title = dev$title,
+    Version = dev$version,
+    `Last commit` = dev$last_commit,
+    check.names = FALSE
+  ),
+  escape = FALSE, rownames = FALSE,
+  options = list(pageLength = 10)
+)
+```
+
+</details>

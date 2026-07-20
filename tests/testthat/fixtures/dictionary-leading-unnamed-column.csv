@@ -1,0 +1,3 @@
+,directory,file_name,variable_name,variable_type,description
+1,data/,demo.rda,id,integer,Row identifier.
+2,data/,demo.rda,name,character,Name of the site.
