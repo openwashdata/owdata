@@ -1,0 +1,125 @@
+# Weekly catalog harvest. Regenerates the catalog from the openwashdata
+# GitHub organization, runs the schema and content gates, and commits the
+# generated artifacts straight to main (they are generated data; human
+# code changes keep flowing through pull requests). The push to main
+# triggers the pkgdown workflow, so the site rebuilds automatically.
+#
+# Failures open or update an issue labelled harvest-failure. Silence is
+# never a success signal: check the issue list, not your inbox.
+
+name: harvest
+
+on:
+  schedule:
+    - cron: '0 3 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::roxygen2, any::pkgload, any::writexl
+          needs: harvest
+
+      - name: Run harvest
+        env:
+          OWD_HARVEST_BACKEND: github
+        run: Rscript data-raw/harvest.R
+
+      - name: Regenerate documentation
+        run: Rscript -e 'roxygen2::roxygenise()'
+
+      - name: Schema and content gate
+        run: Rscript -e 'testthat::test_local(stop_on_failure = TRUE)'
+
+      - name: Commit and push generated data
+        id: commit
+        run: |
+          PATHS="R/sysdata.rda inst/extdata data-raw/packages.json data-raw/harvest_report.md man NAMESPACE DESCRIPTION"
+          if [ -n "$(git status --porcelain -- $PATHS)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add $PATHS
+            git commit -m "chore: weekly catalog harvest $(date -u +%Y-%m-%d)"
+            git push origin main
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No catalog changes this week."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      # The custom r-universe registry supersedes the auto-generated one,
+      # so the generated packages.json (which hard-codes washr and owdata)
+      # is pushed to the registry repo whenever it changes. Requires an
+      # org PAT with write access to openwashdata/openwashdata.r-universe.dev
+      # stored as the REGISTRY_TOKEN secret; the step is a no-op until the
+      # secret exists.
+      - name: Sync r-universe registry
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          REGISTRY_TOKEN: ${{ secrets.REGISTRY_TOKEN }}
+        run: |
+          if [ -z "$REGISTRY_TOKEN" ]; then
+            echo "REGISTRY_TOKEN secret not set; skipping registry sync."
+            exit 0
+          fi
+          git clone --depth 1 \
+            "https://x-access-token:${REGISTRY_TOKEN}@github.com/openwashdata/openwashdata.r-universe.dev.git" \
+            "$RUNNER_TEMP/registry"
+          if cmp -s data-raw/packages.json "$RUNNER_TEMP/registry/packages.json"; then
+            echo "Registry already up to date."
+            exit 0
+          fi
+          cp data-raw/packages.json "$RUNNER_TEMP/registry/packages.json"
+          cd "$RUNNER_TEMP/registry"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packages.json
+          git commit -m "chore: sync registry from owdata harvest $(date -u +%Y-%m-%d)"
+          git push origin HEAD
+
+      - name: Open or update failure issue
+        if: failure()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create harvest-failure \
+            --description "Weekly catalog harvest failed" \
+            --color B60205 --force || true
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          BODY_FILE="$RUNNER_TEMP/issue-body.md"
+          {
+            echo "The weekly catalog harvest failed."
+            echo
+            echo "Run: $RUN_URL"
+            echo
+            if [ -f data-raw/harvest_report.md ]; then
+              echo "Report from the failed run:"
+              echo
+              cat data-raw/harvest_report.md
+            fi
+          } > "$BODY_FILE"
+          EXISTING=$(gh issue list --label harvest-failure --state open \
+            --json number --jq '.[0].number' || true)
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body-file "$BODY_FILE"
+          else
+            gh issue create --title "Weekly harvest failure" \
+              --label harvest-failure --body-file "$BODY_FILE"
+          fi
