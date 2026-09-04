@@ -1,0 +1,8 @@
+^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^CLAUDE\.md$
+^dev$
+^_brand\.yml$
+^logos$
