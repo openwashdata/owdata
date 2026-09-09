@@ -19,11 +19,12 @@ install.packages("owdata", repos = c("https://openwashdata.r-universe.dev", "htt
 
 Three functions return the catalog as tibbles.
 
-- `owd_packages()` lists one row per package.
-- `owd_datasets()` lists one row per dataset, with the package it
-  belongs to.
-- `owd_variables()` lists one row per variable, with the dataset it
-  belongs to.
+- [`owd_packages()`](https://openwashdata.github.io/owdata/reference/owd_packages.md)
+  lists one row per package.
+- [`owd_datasets()`](https://openwashdata.github.io/owdata/reference/owd_datasets.md)
+  lists one row per dataset, with the package it belongs to.
+- [`owd_variables()`](https://openwashdata.github.io/owdata/reference/owd_variables.md)
+  lists one row per variable, with the dataset it belongs to.
 
 `owd_search("water")` finds the packages, datasets and variables whose
 name or description match a pattern. `owd_install("washmalawi")`
