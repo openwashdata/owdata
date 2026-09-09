@@ -1,0 +1,138 @@
+[
+  {
+    "package": "artesianwells",
+    "url": "https://github.com/openwashdata/artesianwells"
+  },
+  {
+    "package": "biogasoutcomesmalawi",
+    "url": "https://github.com/openwashdata/biogasoutcomesmalawi"
+  },
+  {
+    "package": "boreholeforensicspumpingtest",
+    "url": "https://github.com/openwashdata/boreholeforensicspumpingtest"
+  },
+  {
+    "package": "boreholefuncmwi",
+    "url": "https://github.com/openwashdata/boreholefuncmwi"
+  },
+  {
+    "package": "breathablepitlat",
+    "url": "https://github.com/openwashdata/breathablepitlat"
+  },
+  {
+    "package": "cbssuitabilityhaiti",
+    "url": "https://github.com/openwashdata/cbssuitabilityhaiti"
+  },
+  {
+    "package": "choleramalawi",
+    "url": "https://github.com/openwashdata/choleramalawi"
+  },
+  {
+    "package": "ds4owdanalytics",
+    "url": "https://github.com/openwashdata/ds4owdanalytics"
+  },
+  {
+    "package": "fecalcanuga",
+    "url": "https://github.com/openwashdata/fecalcanuga"
+  },
+  {
+    "package": "floodchlorinationsurvey",
+    "url": "https://github.com/openwashdata/floodchlorinationsurvey"
+  },
+  {
+    "package": "fslogisticskampala",
+    "url": "https://github.com/openwashdata/fslogisticskampala"
+  },
+  {
+    "package": "fsmglobal",
+    "url": "https://github.com/openwashdata/fsmglobal"
+  },
+  {
+    "package": "gdho",
+    "url": "https://github.com/openwashdata/gdho"
+  },
+  {
+    "package": "glossarywho",
+    "url": "https://github.com/openwashdata/glossarywho"
+  },
+  {
+    "package": "hydrogeologicalghana",
+    "url": "https://github.com/openwashdata/hydrogeologicalghana"
+  },
+  {
+    "package": "owdata",
+    "url": "https://github.com/openwashdata/owdata"
+  },
+  {
+    "package": "planetaryhdi",
+    "url": "https://github.com/openwashdata/planetaryhdi"
+  },
+  {
+    "package": "ploswater",
+    "url": "https://github.com/openwashdata/ploswater"
+  },
+  {
+    "package": "postfloodintervention",
+    "url": "https://github.com/openwashdata/postfloodintervention"
+  },
+  {
+    "package": "rwpfunctionality",
+    "url": "https://github.com/openwashdata/rwpfunctionality"
+  },
+  {
+    "package": "saniabidjan",
+    "url": "https://github.com/openwashdata/saniabidjan"
+  },
+  {
+    "package": "solidwastekampala",
+    "url": "https://github.com/openwashdata/solidwastekampala"
+  },
+  {
+    "package": "ugabore",
+    "url": "https://github.com/openwashdata/ugabore"
+  },
+  {
+    "package": "undpcomposite",
+    "url": "https://github.com/openwashdata/undpcomposite"
+  },
+  {
+    "package": "unhcrwash",
+    "url": "https://github.com/openwashdata/unhcrwash"
+  },
+  {
+    "package": "waschoolpiracema",
+    "url": "https://github.com/openwashdata/waschoolpiracema"
+  },
+  {
+    "package": "washinvestments",
+    "url": "https://github.com/openwashdata/washinvestments"
+  },
+  {
+    "package": "washmalawi",
+    "url": "https://github.com/openwashdata/washmalawi"
+  },
+  {
+    "package": "washopenresearch",
+    "url": "https://github.com/openwashdata/washopenresearch"
+  },
+  {
+    "package": "washr",
+    "url": "https://github.com/openwashdata/washr"
+  },
+  {
+    "package": "wasteskipsblantyre",
+    "url": "https://github.com/openwashdata/wasteskipsblantyre"
+  },
+  {
+    "package": "watercostaccra",
+    "url": "https://github.com/openwashdata/watercostaccra"
+  },
+  {
+    "package": "waterpumpkwale",
+    "url": "https://github.com/openwashdata/waterpumpkwale"
+  },
+  {
+    "package": "worldhdi",
+    "url": "https://github.com/openwashdata/worldhdi"
+  }
+]

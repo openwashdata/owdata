@@ -466,10 +466,16 @@ for (name in names(tables)) {
   )
 }
 
-# r-universe registry draft. washr and owdata are hard-coded on purpose:
-# the custom registry supersedes the auto-generated CRAN registry, so a
-# generated file that ever omitted washr would silently drop it from
-# https://openwashdata.r-universe.dev (openwashdata/owdata#8).
+# r-universe registry draft: the published data packages plus the two
+# tools, hard-coded so a generated file can never omit them (#8).
+#
+# owdata has to be here, because it is not on CRAN and owd_install()
+# points at this repository. washr is on CRAN and installable from there
+# regardless; it is listed so the universe also carries a development
+# build. Neither can be dropped silently: a custom registry takes
+# precedence over the auto-generated one r-universe builds by scanning
+# CRAN for GitHub links, so this file is the whole universe once it
+# exists.
 registry <- unique(c(packages$pkg_name[packages$published], "washr", "owdata"))
 registry <- sort(registry)
 packages_json <- data.frame(

@@ -1,11 +1,14 @@
 # The r-universe registry draft (#8).
 #
-# A custom registry supersedes the auto-generated CRAN one, so the moment
-# openwashdata.r-universe.dev holds a packages.json, that file is the
-# whole universe. washr appears there today only because of the
-# auto-generated registry, so a generated file that ever omitted it would
-# silently drop washr from the universe. Hence the hard-coding, and hence
-# this test.
+# A custom registry supersedes the auto-generated one r-universe builds
+# by scanning CRAN for GitHub links, so once openwashdata.r-universe.dev
+# holds a packages.json, that file is the whole universe and anything
+# missing from it disappears with no error.
+#
+# owdata must be listed: it is not on CRAN and owd_install() points at
+# this repository. washr is listed by choice, so the universe carries a
+# development build beside the CRAN release. Both are hard-coded by the
+# generator, and these tests are what stops either being dropped.
 
 registry_path <- testthat::test_path("..", "..", "data-raw", "packages.json")
 
