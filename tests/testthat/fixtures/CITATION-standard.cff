@@ -1,0 +1,104 @@
+cff-version: 1.2.0
+message: "If you use this data, please cite it as below."
+title: "washmalawi: WASH Household Level Survey Data 2018 - 2023"
+version: 1.0.1
+date-released: 2025-07-03
+doi: 10.5281/zenodo.15799918
+authors:
+  - family-names: "Mhango"
+    given-names: "Emmanuel"
+    email: "emmanuellmhango@gmail.com"
+    orcid: "https://orcid.org/0000-0003-3197-6244"
+  - family-names: "Robertson"
+    given-names: "Donald"
+  - family-names: "Mandala"
+    given-names: "Chifundo"
+  - family-names: "Nzengo"
+    given-names: "M"
+  - family-names: "Nhlema"
+    given-names: "Muthi"
+  - family-names: "Banda"
+    given-names: "M."
+  - family-names: "Zinyongo"
+    given-names: "Khumbo"
+  - family-names: "Nedi"
+    given-names: "Christian"
+  - family-names: "Ngwena"
+    given-names: "Leman"
+  - family-names: "Kazembe"
+    given-names: "M"
+  - family-names: "Mthindi"
+    given-names: "Yankho"
+  - family-names: "Mofolo"
+    given-names: "E."
+  - family-names: "Bauleni"
+    given-names: "Jeffrey"
+  - family-names: "Malliot"
+    given-names: "Khallen"
+  - family-names: "Mtemangombe"
+    given-names: "Thandi"
+  - family-names: "Tembo"
+    given-names: "Tamandani"
+  - family-names: "Mlenga"
+    given-names: "Samuel"
+  - family-names: "Joshua"
+    given-names: "Dufter"
+  - family-names: "Mthunzi"
+    given-names: "Andrew"
+  - family-names: "Kafuwa"
+    given-names: "Martha"
+  - family-names: "Tembo"
+    given-names: "Takondwa"
+  - family-names: "Singogo"
+    given-names: "Peter"
+  - family-names: "Mkandawire"
+    given-names: "Goodwin"
+  - family-names: "Msiska"
+    given-names: "Monica"
+  - family-names: "Chilora"
+    given-names: "Lemekezani"
+  - family-names: "Jambo"
+    given-names: "Tendai"
+  - family-names: "Kanyinji"
+    given-names: "William"
+  - family-names: "Kanyinji"
+    given-names: "Chikondi"
+  - family-names: "Kamamkhudza"
+    given-names: "Madalitso"
+  - family-names: "Siliya"
+    given-names: "Sylvia"
+  - family-names: "Gadi"
+    given-names: "Edward K"
+  - family-names: "Echika"
+    given-names: "Buli"
+  - family-names: "Monjeza"
+    given-names: "Sunganani"
+  - family-names: "Macheke"
+    given-names: "Derick"
+  - family-names: "Chinawa"
+    given-names: "Fatsani"
+  - family-names: "Sunthika"
+    given-names: "Jonathan"
+  - family-names: "Phiri"
+    given-names: "Precious"
+  - family-names: "Mphero"
+    given-names: "Bright"
+  - family-names: "Kananji"
+    given-names: "Rodney"
+type: dataset
+keywords:
+  - WASH
+  - water
+  - sanitation
+  - hygiene
+  - Malawi
+  - household survey
+  - SDG
+license: CC-BY-4.0
+repository-code: "https://github.com/openwashdata/washmalawi"
+url: "https://github.com/openwashdata/washmalawi"
+abstract: |
+  This dataset provides comprehensive Water, Sanitation, and Hygiene (WASH) 
+  household-level survey data collected in Malawi between 2018 and 2023. 
+  The data includes indicators for monitoring WASH-related Sustainable 
+  Development Goals at the household level across different regions of Malawi.

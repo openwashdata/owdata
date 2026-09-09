@@ -1,0 +1,4 @@
+directory,file_name,variable_name,variable_type,description
+data,d.rda,ort,character,Ort der Messung in Zürich
+data,d.rda,qualite,character,Qualité de l eau
+data,d.rda,when,"c(""POSIXct"", ""POSIXt"")",Zeitpunkt der Messung

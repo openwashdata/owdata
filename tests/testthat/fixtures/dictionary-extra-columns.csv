@@ -1,0 +1,150 @@
+directory,file_name,variable_name,variable_type,description,unit_type,error
+data/,water_samples.rda,localization,character,Name of the localization where the sample was taken.,NA,NA
+data/,water_samples.rda,geology,character,Composition of the ground.,NA,NA
+data/,water_samples.rda,utm_x,character,Geospatial data of the water sampling locations. The geographic coordinate system 'Arc 1960 / UTM zone 37S' (EPSG:21037) which is used for the areas of Kenya and Tanzania - south of equator and east of 36°E.,Arc 1960,NA
+data/,water_samples.rda,utm_y,character,Geospatial data of the water sampling locations. The geographic coordinate system 'Arc 1960 / UTM zone 37S' (EPSG:21037) which is used for the areas of Kenya and Tanzania - south of equator and east of 36°E.,Arc 1960,NA
+data/,water_samples.rda,date,dttm,Date the sample was taken.,NA,NA
+data/,water_samples.rda,conductivity,double,Conductivity of the sample in (µS/cm),(µS/cm),NA
+data/,water_samples.rda,T_avg,double,Average ambient temperature at the time of the sampling,°C,NA
+data/,water_samples.rda,pH,double,Acidity/basicity of the sample using the pH value.,NA,NA
+data/,water_samples.rda,TOC,double,Total organic carbon (TOC) is an analytical parameter representing the concentration of organic carbon in a sample.,(mg/L),NA
+data/,water_samples.rda,alkalinity,double,Alkalinity of the sample as mg of bicarbonate (HCO3) per liter (mg_HCO3/L).,as mg/L HCO3,NA
+data/,water_samples.rda,DO,double,Dissolved oxygen (DO) levels in environmental water depend on the physiochemical and biochemical activities in water body and it is an important useful in pollution and waste treatment process control.,(mg/L),NA
+data/,water_samples.rda,ORP,double,Oxidation reduction potential (ORP) in (mV).,mV,NA
+data/,water_samples.rda,eH,double,Redox potential (eH) in (mV).,mV,NA
+data/,water_samples.rda,NH4,double,Ammonium concentration in (mg/L).,(mg/L),NA
+data/,water_samples.rda,Cl,double,Chlorine concentration in (mg/L),(mg/L),0.042 mg/L
+data/,water_samples.rda,SO4,double,Sulfate concentration in (mg/L),(mg/L),0.026mg/L
+data/,water_samples.rda,NO3,double,Nitrate concentration in (mg/L),(mg/L),0.005mg/L
+data/,water_samples.rda,PO4,double,Phosphate concentration in (mg/L),(mg/L),"0,008 mg/L"
+data/,water_samples.rda,Br,double,Bromine concentration in (mg/L),(mg/L),0.004mg/L
+data/,water_samples.rda,F,double,Fluorine concentration in (mg/L),(mg/L),0.024mg/L
+data/,water_samples.rda,Ca,double,Calcium concentration in (mg/L),(mg/L),0.05 mg/L
+data/,water_samples.rda,Mg,double,Magnesium concentration in (mg/L),(mg/L),0.05 mg/L
+data/,water_samples.rda,Na,double,Sodium concentration in (mg/L),(mg/L),0.1 mg/L
+data/,water_samples.rda,K,double,Potassium concentration in (mg/L),(mg/L),0.1 mg/L
+data/,water_samples.rda,Fe,double,Iron concentration in (mg/L),(mg/L),0.05 mg/L
+data/,water_samples.rda,Si,double,Silicon concentration in (mg/L),(mg/L),0.02 mg/L
+data/,water_samples.rda,Al,double,Aluminum concentration in (mg/L),(mg/L),0.05 mg/L
+data/,water_samples.rda,S,double,Sulfur concentration in (mg/L),(mg/L),0.05 mg/L
+data/,water_samples.rda,P,double,Phosphorus concentration in (mg/L),(mg/L),0.1 mg/L
+data/,water_samples.rda,Li,double,Lithium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Be,double,Beryllium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,B,double,Boron concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Sc,double,Scandium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Ti,double,Titanium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,V,double,Vanadium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Cr,double,Chromium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Mn,double,Manganese concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Co,double,Cobalt concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Ni,double,Nickel concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Cu,double,Copper concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Zn,double,Zinc concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Ga,double,Gallium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Ge,double,Germanium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,As,double,Arsenic concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Se,double,Selenium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Rb,double,Rubidium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Sr,double,Strontium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Y,double,Yttrium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Zr,double,Zirconium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Nb,double,Niobium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Mo,double,Molybdenum concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Cd,double,Cadmium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Sn,double,Tin concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Sb,double,Antimony concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Cs,double,Cesium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Ba,double,Barium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,La,double,Lanthanum concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Ce,double,Cerium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Pr,double,Praseodymium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Nd,double,Neodymium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Sm,double,Samarium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Eu,double,Europium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Gd,double,Gadolinium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Tb,double,Terbium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Dy,double,Dysprosium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Ho,double,Holmium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Er,double,Erbium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Tm,double,Thulium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Yb,double,Ytterbium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Lu,double,Lutetium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Hf,double,Hafnium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Ta,double,Tantalum concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,W,double,Wolfram concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Tl,double,Thallium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Pb,double,Lead concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Bi,double,Bismuth concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,Th,double,Thorium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,U,double,Uranium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,water_samples.rda,delta_O_18,double,The ratio of stable isotopes oxygen-18 (18O) and oxygen-16 (16O) as a measure of groundwater/mineral interactions.,NA,NA
+data/,water_samples.rda,delta_H_2,double,"δ2H, or delta deuterium, is a measure of the relative abundance of deuterium (a stable isotope of hydrogen) in a sample, often used in hydrology and environmental science to trace the origin and movement of water.",NA,NA
+data/,selected_samples.rda,code,character,,NA,LOD
+data/,selected_samples.rda,date,dttm,Date the sample was taken.,NA,NA
+data/,selected_samples.rda,conductivity,double,Conductivity of the sample in (µS/cm),(µS/cm),NA
+data/,selected_samples.rda,T_avg,double,Average ambient temperature at the time of the sampling,°C,NA
+data/,selected_samples.rda,pH,double,Acidity/basicity of the sample using the pH value.,NA,NA
+data/,selected_samples.rda,Cl,double,Chlorine concentration in (mg/L),(mg/L),0.042 mg/L
+data/,selected_samples.rda,SO4,double,Sulfate concentration in (mg/L),(mg/L),0.026mg/L
+data/,selected_samples.rda,NO3,double,Nitrate concentration in (mg/L),(mg/L),0.005mg/L
+data/,selected_samples.rda,PO4,double,Phosphate concentration in (mg/L),(mg/L),"0,008 mg/L"
+data/,selected_samples.rda,Br,double,Bromine concentration in (mg/L),(mg/L),0.019mg/L
+data/,selected_samples.rda,F,double,Fluorine concentration in (mg/L),(mg/L),0.024mg/L
+data/,selected_samples.rda,Ca,double,Calcium concentration in (mg/L),(mg/L),0.05 mg/L
+data/,selected_samples.rda,Mg,double,Magnesium concentration in (mg/L),(mg/L),0.05 mg/L
+data/,selected_samples.rda,Na,double,Sodium concentration in (mg/L),(mg/L),0.1 mg/L
+data/,selected_samples.rda,K,double,Potassium concentration in (mg/L),(mg/L),0.1 mg/L
+data/,selected_samples.rda,Fe,double,Iron concentration in (mg/L),(mg/L),0.05 mg/L
+data/,selected_samples.rda,Si,double,Silicon concentration in (mg/L),(mg/L),0.02 mg/L
+data/,selected_samples.rda,Al,double,Aluminum concentration in (mg/L),(mg/L),0.05 mg/L
+data/,selected_samples.rda,S,double,Sulfur concentration in (mg/L),(mg/L),0.05 mg/L
+data/,selected_samples.rda,P,double,Phosphorus concentration in (mg/L),(mg/L),0.1 mg/L
+data/,selected_samples.rda,Li,double,Lithium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Be,double,Beryllium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,B,double,Boron concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Sc,double,Scandium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Ti,double,Titanium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,V,double,Vanadium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Cr,double,Chromium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Mn,double,Manganese concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Co,double,Cobalt concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Ni,double,Nickel concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Cu,double,Copper concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Zn,double,Zinc concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Ga,double,Gallium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Ge,double,Germanium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,As,double,Arsenic concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Se,double,Selenium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Rb,double,Rubidium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Sr,double,Strontium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Y,double,Yttrium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Zr,double,Zirconium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Nb,double,Niobium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Mo,double,Molybdenum concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Cd,double,Cadmium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Sn,double,Tin concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Sb,double,Antimony concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Cs,double,Cesium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Ba,double,Barium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,La,double,Lanthanum concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Ce,double,Cerium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Pr,double,Praseodymium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Nd,double,Neodymium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Sm,double,Samarium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Eu,double,Europium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Gd,double,Gadolinium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Tb,double,Terbium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Dy,double,Dysprosium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Ho,double,Holmium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Er,double,Erbium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Tm,double,Thulium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Yb,double,Ytterbium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Lu,double,Lutetium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Hf,double,Hafnium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Ta,double,Tantalum concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,W,double,Wolfram concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Tl,double,Thallium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Pb,double,Lead concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Bi,double,Bismuth concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,Th,double,Thorium concentration in parts per billion (ppb).,ppb,0.08 ppb
+data/,selected_samples.rda,U,double,Uranium concentration in parts per billion (ppb).,ppb,0.08 ppb

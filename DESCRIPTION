@@ -1,6 +1,6 @@
 Package: owdata
 Title: Index of openwashdata R Data Packages
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: c(
     person("Lars", "Schöbitz", , "lschoebitz@ethz.ch", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-2196-5015")),
@@ -19,6 +19,7 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
 Suggests: 
+    jsonlite,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports: 
@@ -27,5 +28,8 @@ Imports:
 Language: en-GB
 LazyData: true
 Config/Needs/website: rmarkdown, brand.yml
-Date: 2026-09-04
+Date: 2026-09-09
 BugReports: https://github.com/openwashdata/owdata/issues
+Config/Needs/harvest: desc, cffr, gh, jsonlite
+Depends: 
+    R (>= 3.5)

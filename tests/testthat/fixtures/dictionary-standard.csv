@@ -1,0 +1,27 @@
+directory,file_name,variable_name,variable_type,description
+data/,washmalawi.rda,date_submitted,character,The date on which the household survey form was submitted.
+data/,washmalawi.rda,latitude,numeric,The geographic latitude coordinate of the household location.
+data/,washmalawi.rda,longitude,numeric,The geographic longitude coordinate of the household location.
+data/,washmalawi.rda,water_point_identification_method,character,Method used to identify the water point
+data/,washmalawi.rda,traditional_authority,character,The name of the Traditional Authority where the household is located.
+data/,washmalawi.rda,district,character,The name of the district where the household is located.
+data/,washmalawi.rda,water_source_type,character,Type of water source used by the household
+data/,washmalawi.rda,water_source_location,character,Location of the water source relative to the household
+data/,washmalawi.rda,water_collection_time_mins,numeric,"Estimated round-trip time in minutes to collect water, including waiting time."
+data/,washmalawi.rda,time_not_known,logical,TRUE if respondent does not know or cannot estimate the water collection time.
+data/,washmalawi.rda,water_insufficiency_30days,character,Whether the household experienced water insufficiency in the past 30 days
+data/,washmalawi.rda,water_quality_tested,character,Whether the water quality at the source has been tested.
+data/,washmalawi.rda,bacteriological_test_done_at_location,character,Indicates whether a bacteriological test was performed on-site at the household or source.
+data/,washmalawi.rda,parameters_tested_methods,character,List or description of water quality parameters tested and methods used.
+data/,washmalawi.rda,chemical_quality_tested,character,Indicates whether chemical tests were performed on the water.
+data/,washmalawi.rda,arsenic_tested_water,character,Indicates whether the water was tested for arsenic contamination.
+data/,washmalawi.rda,fluoride_tested_water,character,Indicates whether the water was tested for fluoride levels.
+data/,washmalawi.rda,toilet_facility_type,character,The type of toilet facility used by the household
+data/,washmalawi.rda,toilet_facility_shared,character,Indicates whether the toilet facility is shared with other households.
+data/,washmalawi.rda,waste_removed,character,Indicates whether household waste is regularly removed
+data/,washmalawi.rda,waste_treated,character,Whether the waste is treated
+data/,washmalawi.rda,waste_disposal,character,Method used for waste disposal
+data/,washmalawi.rda,handwash_available,character,Whether the household has a designated place for handwashing.
+data/,washmalawi.rda,handwashing_water_presence,character,Whether water was present at the handwashing location at the time of visit.
+data/,washmalawi.rda,handwashing_soap_presence,character,Whether soap or detergent was present at the handwashing place at the time of visit.
+data/,washmalawi.rda,handwashing_supplies_available,character,Overall availability of both soap and water for handwashing.
