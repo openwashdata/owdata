@@ -1,0 +1,11 @@
+^\.github$
+^LICENSE\.md$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^_brand\.yml$
+^logos$
+^dev$
+^CLAUDE\.md$
+^.*\.Rproj$
+^\.Rproj\.user$
