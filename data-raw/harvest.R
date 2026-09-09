@@ -342,9 +342,43 @@ if (length(escaped) > 0) {
     length(escaped), escaped[1]
   ))
 }
-dup_doi <- packages$doi[!is.na(packages$doi) & duplicated(packages$doi)]
+# A DOI claimed by two packages is an upstream defect: one CITATION.cff
+# carries another dataset's record. Shipping it either way would send
+# readers to the wrong deposit, so the deposit itself decides. Zenodo
+# records the source repository, and the package it names keeps the DOI
+# while the others lose it and fall back to unpublished. Punishing every
+# claimant would demote the package that did nothing wrong, and stopping
+# the run would let one bad citation file block the whole catalog until
+# somebody noticed.
+dup_doi <- unique(packages$doi[!is.na(packages$doi) & duplicated(packages$doi)])
+for (d in dup_doi) {
+  claimants <- packages$pkg_name[!is.na(packages$doi) & packages$doi == d]
+  owner <- owd_zenodo_owner(d, claimants)
+  losers <- setdiff(claimants, owner)
+  reason <- if (is.na(owner)) {
+    sprintf(
+      "DOI %s is claimed by %s and Zenodo names none of them; dropped from all",
+      d, paste(claimants, collapse = ", ")
+    )
+  } else {
+    sprintf(
+      "DOI %s is claimed by %s; Zenodo names %s, so it is dropped from %s",
+      d, paste(claimants, collapse = ", "), owner, paste(losers, collapse = ", ")
+    )
+  }
+  problems <- rbind(problems, data.frame(
+    repo = claimants, stage = "warn", reason = reason
+  ))
+  drop <- packages$pkg_name %in% losers
+  packages$doi[drop] <- NA_character_
+  packages$published[drop] <- FALSE
+}
 if (length(dup_doi) > 0) {
-  stop("DOI shared by more than one package: ", paste(unique(dup_doi), collapse = ", "))
+  # Detail was harvested while the demoted packages still counted as
+  # published.
+  still <- packages$pkg_name[packages$published]
+  datasets <- datasets[datasets$pkg_name %in% still, , drop = FALSE]
+  variables <- variables[variables$pkg_name %in% still, , drop = FALSE]
 }
 dup_pkg <- packages$pkg_name[duplicated(packages$pkg_name)]
 if (length(dup_pkg) > 0) {

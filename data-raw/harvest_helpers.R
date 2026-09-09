@@ -205,3 +205,39 @@ owd_github_source <- function(repo, org = "openwashdata") {
     )
   )
 }
+
+# --- Zenodo -----------------------------------------------------------------
+
+# Which of the claimant packages does a contested DOI actually belong to?
+#
+# The deposit is the authority. Its metadata names a source repository and
+# a title, though not always under the package name: openwashdata deposits
+# predating the org move point at Global-Health-Engineering and at hyphenated
+# repository names, so the match is made on the alphanumeric letters of the
+# package name against the whole record. The claimant the record names owns
+# the DOI; the others carry it by mistake. Returns NA when the record cannot
+# be read, or names none or several of them, in which case the caller drops
+# the DOI from every claimant.
+owd_zenodo_owner <- function(doi, claimants) {
+  id <- sub("^10\\.5281/zenodo\\.", "", doi)
+  if (identical(id, doi) || !nzchar(id)) {
+    return(NA_character_)
+  }
+  f <- owd_http_fetch(paste0("https://zenodo.org/api/records/", id), tries = 2)
+  if (is.null(f)) {
+    return(NA_character_)
+  }
+  on.exit(unlink(f))
+  rec <- tryCatch(jsonlite::fromJSON(f, simplifyVector = FALSE), error = function(e) NULL)
+  if (is.null(rec)) {
+    return(NA_character_)
+  }
+  # Reduce both sides to letters and digits, so "wasteskipsblantyre"
+  # matches "data-public-waste-skips-blantyre".
+  squash <- function(x) gsub("[^a-z0-9]", "", tolower(x))
+  hay <- squash(paste(unlist(rec), collapse = " "))
+  named <- claimants[vapply(claimants, function(p) {
+    grepl(squash(p), hay, fixed = TRUE)
+  }, logical(1))]
+  if (length(named) == 1) named else NA_character_
+}
