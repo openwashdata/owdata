@@ -31,3 +31,5 @@ Config/Needs/website: rmarkdown, brand.yml
 Date: 2026-09-09
 BugReports: https://github.com/openwashdata/owdata/issues
 Config/Needs/harvest: desc, cffr, gh, jsonlite
+Depends: 
+    R (>= 3.5)
