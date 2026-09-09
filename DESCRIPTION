@@ -17,7 +17,6 @@ URL: https://openwashdata.github.io/owdata/,
     https://github.com/openwashdata/owdata
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 8.0.0
 Suggests: 
     jsonlite,
     testthat (>= 3.0.0)
@@ -33,3 +32,4 @@ BugReports: https://github.com/openwashdata/owdata/issues
 Config/Needs/harvest: desc, cffr, gh, jsonlite
 Depends: 
     R (>= 3.5)
+Config/roxygen2/version: 8.1.0
