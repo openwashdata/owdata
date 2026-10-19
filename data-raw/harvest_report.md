@@ -1,16 +1,31 @@
 # Harvest report
 
-Run: 2026-09-09T14:03:57Z (backend: github)
+Run: 2026-10-19T08:35:27Z (backend: github)
 
-Packages: 64 (32 published). Datasets: 53. Variables: 2798.
+Packages: 59 (50 published). Datasets: 78. Variables: 2716.
 
 ## Deltas since previous committed run
 
-None.
+- published change: basisghana FALSE -> TRUE
+- published change: boreholelabdata FALSE -> TRUE
+- published change: chckapmalawi FALSE -> TRUE
+- published change: cleanteamghana FALSE -> TRUE
+- published change: dowaodfsurvey FALSE -> TRUE
+- published change: drillingdata FALSE -> TRUE
+- published change: floodresponsemw FALSE -> TRUE
+- published change: grdwtrsmpkwale FALSE -> TRUE
+- published change: gwinfraassess FALSE -> TRUE
+- published change: handpumpstatusdata FALSE -> TRUE
+- published change: mwefloodresponse FALSE -> TRUE
+- published change: mwgroundwaterdata FALSE -> TRUE
+- published change: nchalohhwatersurvey FALSE -> TRUE
+- published change: portawaterperu FALSE -> TRUE
+- published change: rainwaterhsurvey FALSE -> TRUE
+- published change: thyolocbcc FALSE -> TRUE
+- published change: universityrankingafrica FALSE -> TRUE
+- published change: waterpointstatus FALSE -> TRUE
+- packages dropped from catalog: ploswater, washdataportalsl, wasteburningblantyre, wastecollectionblantyre, whatawaste, whdxdata
 
 ## Problems
 
-- grdwtrsmpkwale [warn]: version drift: DESCRIPTION 0.0.1 vs CITATION.cff 0.0.0.9000
-- portawaterperu [warn]: version drift: DESCRIPTION 0.0.1 vs CITATION.cff 0.0.0.9000
-- hydrogeologicalghana [warn]: DESCRIPTION URL does not mention https://github.com/openwashdata/hydrogeologicalghana
-- waterpointstatus [warn]: normalized malformed version 'v1.0.0'
+None.
