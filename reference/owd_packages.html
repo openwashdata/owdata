@@ -11,7 +11,7 @@ result."><script defer data-domain="openwashdata.github.io" src="https://plausib
 
     <a class="navbar-brand me-2" href="../index.html">owdata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -80,20 +80,20 @@ about whether a package is published.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">owd_packages</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 64 × 32</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 60 × 32</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    pkg_name              title description version published reviewed maintainer</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> artesianwells         Arte… A dataset … 0.1.0   TRUE      <span style="color: #BB0000;">NA</span>       Emmanuel …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> basisghana            Basi… This packa… 0.0.0.… FALSE     <span style="color: #BB0000;">NA</span>       Lars Schö…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> basisghana            Basi… This packa… 0.0.0.… TRUE      <span style="color: #BB0000;">NA</span>       Lars Schö…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> biogasoutcomesmalawi  Data… This datas… 0.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Lars Schö…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> boreholeforensicspum… Bore… This datas… 0.1.0   TRUE      <span style="color: #BB0000;">NA</span>       Emmanuel …</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> boreholefuncmwi       Anal… The data i… 0.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Mabvuto Y…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> boreholelabdata       Wate… This datas… 0.0.0.… FALSE     <span style="color: #BB0000;">NA</span>       Emmanuel …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> breathablepitlat      Data… This datas… 0.0.0.… TRUE      <span style="color: #BB0000;">NA</span>       Mian Zhong</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> cbssuitabilityhaiti   Data… This packa… 0.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Sebastian…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> chckapmalawi          Know… This datas… 0.0.0.… FALSE     <span style="color: #BB0000;">NA</span>       Sophia Sk…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> choleramalawi         Trac… A dataset … 0.1.0   TRUE      <span style="color: #BB0000;">NA</span>       Yash Dubey</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 54 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> boreholelabdata       Bore… This datas… 1.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Emmanuel …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> breathablepitlat      Brea… This datas… 1.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Lars Schö…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> cbssuitabilityhaiti   Sani… This packa… 0.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Lars Schö…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> chckapmalawi          KAP … This datas… 0.0.3   TRUE      <span style="color: #BB0000;">NA</span>       Lars Schö…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> choleramalawi         Trac… A dataset … 1.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Lars Schö…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 50 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 25 more variables: maintainer_orcid &lt;chr&gt;, authors &lt;chr&gt;, license &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   date &lt;date&gt;, keywords &lt;chr&gt;, spatial_coverage &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   temporal_coverage &lt;chr&gt;, doi &lt;chr&gt;, cff_version &lt;chr&gt;, url_github &lt;chr&gt;,</span></span>
@@ -101,20 +101,20 @@ about whether a package is published.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   default_branch &lt;chr&gt;, created_at &lt;date&gt;, last_commit &lt;date&gt;, topics &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   has_dictionary &lt;lgl&gt;, has_extdata &lt;lgl&gt;, washr_version &lt;chr&gt;, …</span></span>
 <span class="r-in"><span><span class="fu">owd_packages</span><span class="op">(</span>published <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 32 × 32</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 50 × 32</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    pkg_name              title description version published reviewed maintainer</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> artesianwells         Arte… A dataset … 0.1.0   TRUE      <span style="color: #BB0000;">NA</span>       Emmanuel …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> biogasoutcomesmalawi  Data… This datas… 0.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Lars Schö…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> boreholeforensicspum… Bore… This datas… 0.1.0   TRUE      <span style="color: #BB0000;">NA</span>       Emmanuel …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> boreholefuncmwi       Anal… The data i… 0.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Mabvuto Y…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> breathablepitlat      Data… This datas… 0.0.0.… TRUE      <span style="color: #BB0000;">NA</span>       Mian Zhong</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> cbssuitabilityhaiti   Data… This packa… 0.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Sebastian…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> choleramalawi         Trac… A dataset … 0.1.0   TRUE      <span style="color: #BB0000;">NA</span>       Yash Dubey</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> ds4owdanalytics       DS4O… Data colle… 0.1.0   TRUE      <span style="color: #BB0000;">NA</span>       Yash Dubey</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> fecalcanuga           Demo… This data … 0.1.0   TRUE      <span style="color: #BB0000;">NA</span>       Kelsey Sh…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> floodchlorinationsur… USAI… This R pac… 0.1.0   TRUE      <span style="color: #BB0000;">NA</span>       Emmanuel …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 22 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> basisghana            Basi… This packa… 0.0.0.… TRUE      <span style="color: #BB0000;">NA</span>       Lars Schö…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> biogasoutcomesmalawi  Data… This datas… 0.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Lars Schö…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> boreholeforensicspum… Bore… This datas… 0.1.0   TRUE      <span style="color: #BB0000;">NA</span>       Emmanuel …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> boreholefuncmwi       Anal… The data i… 0.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Mabvuto Y…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> boreholelabdata       Bore… This datas… 1.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Emmanuel …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> breathablepitlat      Brea… This datas… 1.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Lars Schö…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> cbssuitabilityhaiti   Sani… This packa… 0.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Lars Schö…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> chckapmalawi          KAP … This datas… 0.0.3   TRUE      <span style="color: #BB0000;">NA</span>       Lars Schö…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> choleramalawi         Trac… A dataset … 1.0.1   TRUE      <span style="color: #BB0000;">NA</span>       Lars Schö…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 40 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 25 more variables: maintainer_orcid &lt;chr&gt;, authors &lt;chr&gt;, license &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   date &lt;date&gt;, keywords &lt;chr&gt;, spatial_coverage &lt;chr&gt;,</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   temporal_coverage &lt;chr&gt;, doi &lt;chr&gt;, cff_version &lt;chr&gt;, url_github &lt;chr&gt;,</span></span>

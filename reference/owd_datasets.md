@@ -28,20 +28,20 @@ A tibble with one row per dataset, with columns `pkg_name`,
 
 ``` r
 owd_datasets()
-#> # A tibble: 53 × 9
+#> # A tibble: 78 × 9
 #>    pkg_name       dataset_name title description n_rows n_vars n_vars_dictionary
 #>    <chr>          <chr>        <chr> <chr>        <int>  <int>             <int>
 #>  1 artesianwells  artesianwel… arte… A dataset …     44     29                29
-#>  2 biogasoutcome… biogasoutco… Qual… This datas…    259      5                 5
-#>  3 boreholeforen… boreholefor… bore… This datas…    445     38                44
-#>  4 boreholefuncm… boreholefun… bore… The data i…    108     17                17
-#>  5 breathablepit… breathablep… NA    NA               6      8                 8
-#>  6 cbssuitabilit… mwater       Loca… This data …   1849      7                 7
-#>  7 cbssuitabilit… okap         Sani… This data …    198     21                13
-#>  8 choleramalawi  choleramala… Titl… Descriptio…   1886      8                 8
-#>  9 ds4owdanalyti… course_part… cour… Sessions a…    734      5                 5
-#> 10 ds4owdanalyti… ds4owd_brow… ds4o… This datas…     17      6                 6
-#> # ℹ 43 more rows
+#>  2 basisghana     basisghana   Basi… The BaSIS …   1618     10                10
+#>  3 basisghana     ghanapop     Ghan… This datas…    260      9                 9
+#>  4 biogasoutcome… biogasoutco… Qual… This datas…   5963      5                 5
+#>  5 boreholeforen… boreholefor… bore… This datas…    445     38                44
+#>  6 boreholefuncm… boreholefun… bore… The data i…    108     17                17
+#>  7 boreholelabda… boreholelab… Wate… This datas…     32     53                53
+#>  8 breathablepit… breathablep… NA    NA            3132      8                 8
+#>  9 cbssuitabilit… mwater       Loca… This data …   1849      7                 7
+#> 10 cbssuitabilit… okap         Sani… This data …    198     13                13
+#> # ℹ 68 more rows
 #> # ℹ 2 more variables: csv_url <chr>, xlsx_url <chr>
 owd_datasets(pkg = "washmalawi")
 #> # A tibble: 1 × 9

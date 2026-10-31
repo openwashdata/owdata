@@ -9,7 +9,7 @@ unpublished package appears in owd_packages() but not here."><script defer data-
 
     <a class="navbar-brand me-2" href="../index.html">owdata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,20 +63,20 @@ unpublished package appears in <code><a href="owd_packages.html">owd_packages()<
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">owd_datasets</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 53 × 9</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 78 × 9</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    pkg_name       dataset_name title description n_rows n_vars n_vars_dictionary</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> artesianwells  artesianwel… arte… A dataset …     44     29                29</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> biogasoutcome… biogasoutco… Qual… This datas…    259      5                 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> boreholeforen… boreholefor… bore… This datas…    445     38                44</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> boreholefuncm… boreholefun… bore… The data i…    108     17                17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> breathablepit… breathablep… <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>               6      8                 8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> cbssuitabilit… mwater       Loca… This data …   <span style="text-decoration: underline;">1</span>849      7                 7</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> cbssuitabilit… okap         Sani… This data …    198     21                13</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> choleramalawi  choleramala… Titl… Descriptio…   <span style="text-decoration: underline;">1</span>886      8                 8</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> ds4owdanalyti… course_part… cour… Sessions a…    734      5                 5</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> ds4owdanalyti… ds4owd_brow… ds4o… This datas…     17      6                 6</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 43 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> basisghana     basisghana   Basi… The BaSIS …   <span style="text-decoration: underline;">1</span>618     10                10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> basisghana     ghanapop     Ghan… This datas…    260      9                 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> biogasoutcome… biogasoutco… Qual… This datas…   <span style="text-decoration: underline;">5</span>963      5                 5</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> boreholeforen… boreholefor… bore… This datas…    445     38                44</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> boreholefuncm… boreholefun… bore… The data i…    108     17                17</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> boreholelabda… boreholelab… Wate… This datas…     32     53                53</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> breathablepit… breathablep… <span style="color: #BB0000;">NA</span>    <span style="color: #BB0000;">NA</span>            <span style="text-decoration: underline;">3</span>132      8                 8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> cbssuitabilit… mwater       Loca… This data …   <span style="text-decoration: underline;">1</span>849      7                 7</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> cbssuitabilit… okap         Sani… This data …    198     13                13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 68 more rows</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: csv_url &lt;chr&gt;, xlsx_url &lt;chr&gt;</span></span>
 <span class="r-in"><span><span class="fu">owd_datasets</span><span class="op">(</span>pkg <span class="op">=</span> <span class="st">"washmalawi"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 9</span></span>

@@ -15,7 +15,7 @@ catalog size.'><script defer data-domain="openwashdata.github.io" src="https://p
 
     <a class="navbar-brand me-2" href="../index.html">owdata</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,22 +82,22 @@ text). Zero rows when nothing matches.</p>
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">owd_search</span><span class="op">(</span><span class="st">"sanitation"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 64 × 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 114 × 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    pkg_name            match_type dataset_name field       text                 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>               <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> basisghana          package    <span style="color: #BB0000;">NA</span>           title       Basic Sanitation Inf…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> cbssuitabilityhaiti package    <span style="color: #BB0000;">NA</span>           title       Data for a sanitatio…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> dowaodfsurvey       package    <span style="color: #BB0000;">NA</span>           title       ODF Sanitation and H…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> fecalcanuga         package    <span style="color: #BB0000;">NA</span>           title       Demographic, Environ…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> glaas               package    <span style="color: #BB0000;">NA</span>           title       Complete Data from t…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> saniabidjan         package    <span style="color: #BB0000;">NA</span>           title       Data About Behavior …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> thyolocbcc          package    <span style="color: #BB0000;">NA</span>           title       WASH and Sanitation …</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> washinvestments     package    <span style="color: #BB0000;">NA</span>           title       Multilateral develop…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> washopenresearch    package    <span style="color: #BB0000;">NA</span>           title       Dataset about open r…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> basisghana          package    <span style="color: #BB0000;">NA</span>           description This package compile…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 54 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> cbssuitabilityhaiti package    <span style="color: #BB0000;">NA</span>           title       Sanitation Zoning an…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> fecalcanuga         package    <span style="color: #BB0000;">NA</span>           title       Non-Sewered Sanitati…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> glaas               package    <span style="color: #BB0000;">NA</span>           title       Complete Data from t…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> saniabidjan         package    <span style="color: #BB0000;">NA</span>           title       Sanitation Facility …</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> washinvestments     package    <span style="color: #BB0000;">NA</span>           title       Multilateral Develop…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> washopenresearch    package    <span style="color: #BB0000;">NA</span>           title       Dataset about open r…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> basisghana          package    <span style="color: #BB0000;">NA</span>           description This package compile…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> cbssuitabilityhaiti package    <span style="color: #BB0000;">NA</span>           description This package contain…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> chckapmalawi        package    <span style="color: #BB0000;">NA</span>           description This dataset capture…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 104 more rows</span></span>
 <span class="r-in"><span><span class="fu">owd_search</span><span class="op">(</span><span class="st">"water"</span>, fields <span class="op">=</span> <span class="st">"variable_name"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 76 × 5</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 174 × 5</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    pkg_name                     match_type dataset_name              field text </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> boreholeforensicspumpingtest variable   boreholeforensicspumping… vari… type…</span>
@@ -109,8 +109,8 @@ text). Zero rows when nothing matches.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> boreholeforensicspumpingtest variable   boreholeforensicspumping… vari… was_…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> boreholeforensicspumpingtest variable   boreholeforensicspumping… vari… wate…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> boreholeforensicspumpingtest variable   boreholeforensicspumping… vari… wate…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> fecalcanuga                  variable   household_survey          vari… water</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 66 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> boreholelabdata              variable   boreholelabdata           vari… wate…</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 164 more rows</span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
