@@ -6,6 +6,19 @@ template:
       <script defer data-domain="openwashdata.github.io" src="https://plausible.io/js/script.js"></script>
   bslib:
     brand: _brand.yml
+  opengraph:
+    image:
+      src: https://raw.githubusercontent.com/openwashdata/brand/v1.1.0/assets/social-preview.png
+      alt: openwashdata, social preview image
+
+navbar:
+  structure:
+    right: [search, home, github, lightswitch]
+  components:
+    home:
+      text: openwashdata.org
+      href: https://openwashdata.org
+      aria-label: openwashdata website
 home:
   links:
   - icon: github
@@ -18,11 +31,15 @@ home:
     - authors
     - dev
     - custom
+    - community
     components:
       custom:
         title: Funding
         text: This project was funded by the [Open Research Data Program of the ETH
           Board](https://ethrat.ch/en/eth-domain/open-research-data/).
+      community:
+        title: openwashdata
+        text: This package is part of [openwashdata](https://openwashdata.org). Browse the [data catalogue](https://openwashdata.org/pages/gallery/data/) or get the [newsletter](https://openwashdata.org/pages/newsletter/).
 authors:
   footer:
     roles:
@@ -36,3 +53,11 @@ authors:
     - ctb
     before: So *who* does the work?
     after: Thanks all!
+
+footer:
+  structure:
+    left: [developed_by, publisher]
+    right: [washr, built_with]
+  components:
+    publisher: Published by [openwashdata](https://openwashdata.org), a project of [Global Health Engineering](https://ghe.ethz.ch/) at ETH Zurich.
+    washr: Package built with [washr](https://openwashdata.github.io/washr/) 1.2.1.
