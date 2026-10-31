@@ -1,5 +1,7 @@
 # owdata
 
+A data package published by [openwashdata](https://openwashdata.org).
+
 owdata is the index of the openwashdata R data packages. It ships a
 catalog of every package in the openwashdata GitHub organisation, with
 the datasets and the variables each package holds. A weekly harvest of
