@@ -1,16 +1,20 @@
 # Weekly catalog harvest. Regenerates the catalog from the openwashdata
-# GitHub organisation, runs the schema and content gates, and opens or
-# updates one pull request with the generated files. The maintainer
-# merges it; the harvest never pushes to main.
+# GitHub organisation, runs the schema and content gates, opens or
+# updates one pull request with the generated files, and merges it in
+# the same run once the gates have passed. The pull request stays as the
+# report trail, with the maintainer as assignee. Until 2026-10-31 a
+# person merged it; seven unmerged weeks showed that step was the weak
+# link (#23).
 #
-# A pull request opened with the built-in GITHUB_TOKEN triggers no
-# pull_request workflows, so the gate runs inside this job. R-CMD-check
-# and pkgdown run on main after the merge, which is a normal push by a
-# person. Do not make R-CMD-check a required status on main, or this
-# pull request can never merge.
+# The built-in GITHUB_TOKEN creates no workflow runs for the events it
+# causes: the pull request triggers no pull_request workflows, so the
+# gate runs inside this job, and the merge triggers no push workflows,
+# so this job dispatches R-CMD-check, pkgdown and test-coverage on main
+# by hand. Do not make R-CMD-check a required status on main, or the
+# merge step can never succeed.
 #
-# A failed run is red in the Actions tab and opens no pull request.
-# There is no failure-issue automation.
+# A failed harvest or gate is red in the Actions tab, opens no pull
+# request and merges nothing. There is no failure-issue automation.
 
 name: harvest
 
@@ -22,6 +26,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  actions: write
 
 jobs:
   harvest:
@@ -56,6 +61,7 @@ jobs:
         run: Rscript -e 'testthat::test_local(stop_on_failure = TRUE)'
 
       - name: Open or update the harvest pull request
+        id: pr
         uses: peter-evans/create-pull-request@v6
         with:
           branch: harvest
@@ -71,4 +77,31 @@ jobs:
           commit-message: "chore: weekly catalog harvest"
           title: "Weekly catalog harvest"
           body-path: data-raw/harvest_report.md
+          assignees: larnsce
           delete-branch: false
+
+      # GitHub computes mergeability after the push, so the first attempt
+      # can meet an unknown state; retry for two minutes.
+      - name: Merge the pull request
+        if: steps.pr.outputs.pull-request-operation == 'created' || steps.pr.outputs.pull-request-operation == 'updated'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ steps.pr.outputs.pull-request-number }}
+        run: |
+          for attempt in 1 2 3 4 5 6; do
+            if gh pr merge "$PR" --squash --repo "$GITHUB_REPOSITORY"; then
+              exit 0
+            fi
+            sleep 20
+          done
+          echo "::error::pull request $PR was not merged after six attempts"
+          exit 1
+
+      - name: Run the workflows that a token merge does not trigger
+        if: steps.pr.outputs.pull-request-operation == 'created' || steps.pr.outputs.pull-request-operation == 'updated'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run R-CMD-check.yaml --ref main --repo "$GITHUB_REPOSITORY"
+          gh workflow run pkgdown.yaml --ref main --repo "$GITHUB_REPOSITORY"
+          gh workflow run test-coverage.yaml --ref main --repo "$GITHUB_REPOSITORY"

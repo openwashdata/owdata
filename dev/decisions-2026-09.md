@@ -149,3 +149,20 @@ in `exclude_repos.csv` or the README, and stop counting to 70.
 
 Closed by this file: #2, #7 (as written), #10. Trimmed: #5, #6, #8, #9,
 #11, #16. #12 is rewritten to the list above.
+
+## Amendments of 2026-10-31
+
+- Section 5: the harvest job merges its own pull request once the gates
+  pass, then dispatches R-CMD-check, pkgdown and test-coverage on main,
+  because a merge by the built-in token triggers no push workflows. The
+  pull request stays as the report trail, with the maintainer as
+  assignee. Reason: the maintainer merge was the weak link. #22 waited
+  from 2026-09-14 to 2026-10-31 while the website served the September
+  catalog (#23).
+- Section 1: archived repositories leave the catalog, also when they
+  carry a Zenodo DOI (ploswater, archived 2026-09-23). The deposit stays
+  citable on Zenodo; the catalog lists what the organisation maintains.
+- Open question, answered in part: of the six repositories that left
+  the catalog between the September and October harvests, five were
+  archived and one (washdataportalsl) went private.
+
