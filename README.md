@@ -1,7 +1,5 @@
 # owdata
 
-A data package published by [openwashdata](https://openwashdata.org).
-
 owdata is the index of the openwashdata R data packages. It ships a catalog of every package in the openwashdata GitHub organisation, with the datasets and the variables each package holds. A weekly harvest of the organisation refreshes the catalog, and each refresh ships as a new version of owdata.
 
 ## Installation
@@ -29,3 +27,5 @@ Publish the package with washr, mint the Zenodo DOI, and the next weekly harvest
 ## Status
 
 The package is a skeleton. The parsers, the harvest, the data model and the functions above land with issues #3 to #6. The plan is tracked in issue #12, and the design decisions are recorded in `dev/decisions-2026-09.md`.
+
+Published by openwashdata, <https://openwashdata.org>.
