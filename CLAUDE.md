@@ -41,8 +41,9 @@ locale; the test gate fails on `<U+xxxx>` escapes in the tables.
 ## Branches
 
 Branches and pull requests to main. No dev branch. The weekly harvest
-bot opens a pull request; it never pushes to main. Do not commit
-generated data by hand.
+bot opens a pull request and merges it in the same run once the gates
+pass (since 2026-10-31, \#23); outside that pull request it never pushes
+to main. Do not commit generated data by hand.
 
 ## Dependencies
 
