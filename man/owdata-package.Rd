@@ -6,6 +6,8 @@
 \alias{owdata-package}
 \title{owdata: Index of openwashdata R Data Packages}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 Index metapackage for the openwashdata R data packages. Ships a harvested catalog of every package in the openwashdata GitHub organisation, with its datasets and variables, as internal data behind accessor and search functions, and installs any listed package from the openwashdata R-universe. The catalog is refreshed by a weekly harvest.
 }
 \seealso{
