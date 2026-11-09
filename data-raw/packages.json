@@ -88,6 +88,10 @@
     "url": "https://github.com/openwashdata/grdwtrsmpkwale"
   },
   {
+    "package": "guluswm",
+    "url": "https://github.com/openwashdata/guluswm"
+  },
+  {
     "package": "gwinfraassess",
     "url": "https://github.com/openwashdata/gwinfraassess"
   },
