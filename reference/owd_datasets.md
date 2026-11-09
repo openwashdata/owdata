@@ -28,7 +28,7 @@ A tibble with one row per dataset, with columns `pkg_name`,
 
 ``` r
 owd_datasets()
-#> # A tibble: 78 × 9
+#> # A tibble: 80 × 9
 #>    pkg_name       dataset_name title description n_rows n_vars n_vars_dictionary
 #>    <chr>          <chr>        <chr> <chr>        <int>  <int>             <int>
 #>  1 artesianwells  artesianwel… arte… A dataset …     44     29                29
@@ -41,7 +41,7 @@ owd_datasets()
 #>  8 breathablepit… breathablep… NA    NA            3132      8                 8
 #>  9 cbssuitabilit… mwater       Loca… This data …   1849      7                 7
 #> 10 cbssuitabilit… okap         Sani… This data …    198     13                13
-#> # ℹ 68 more rows
+#> # ℹ 70 more rows
 #> # ℹ 2 more variables: csv_url <chr>, xlsx_url <chr>
 owd_datasets(pkg = "washmalawi")
 #> # A tibble: 1 × 9
