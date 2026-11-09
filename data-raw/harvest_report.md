@@ -1,12 +1,12 @@
 # Harvest report
 
-Run: 2026-11-02T10:35:55Z (backend: github)
+Run: 2026-11-09T10:57:53Z (backend: github)
 
-Packages: 61 (50 published). Datasets: 78. Variables: 2716.
+Packages: 62 (51 published). Datasets: 80. Variables: 2817.
 
 ## Deltas since previous committed run
 
-- NA rate for doi rose from 17% to 18%
+None.
 
 ## Problems
 
