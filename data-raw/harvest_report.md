@@ -1,12 +1,12 @@
 # Harvest report
 
-Run: 2026-11-09T10:57:53Z (backend: github)
+Run: 2026-11-16T10:41:19Z (backend: github)
 
-Packages: 62 (51 published). Datasets: 80. Variables: 2817.
+Packages: 61 (51 published). Datasets: 80. Variables: 2817.
 
 ## Deltas since previous committed run
 
-None.
+- packages dropped from catalog: waterqualityuganda
 
 ## Problems
 
