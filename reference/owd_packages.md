@@ -40,7 +40,7 @@ whether a package is published.
 
 ``` r
 owd_packages()
-#> # A tibble: 62 × 32
+#> # A tibble: 61 × 32
 #>    pkg_name              title description version published reviewed maintainer
 #>    <chr>                 <chr> <chr>       <chr>   <lgl>     <lgl>    <chr>     
 #>  1 artesianwells         Arte… A dataset … 0.1.0   TRUE      NA       Emmanuel …
@@ -53,7 +53,7 @@ owd_packages()
 #>  8 burigangaamr          Anti… Antibiotic… 0.0.0.… FALSE     NA       Lars Schö…
 #>  9 cbssuitabilityhaiti   Sani… This packa… 0.0.1   TRUE      NA       Lars Schö…
 #> 10 chckapmalawi          KAP … This datas… 0.0.3   TRUE      NA       Lars Schö…
-#> # ℹ 52 more rows
+#> # ℹ 51 more rows
 #> # ℹ 25 more variables: maintainer_orcid <chr>, authors <chr>, license <chr>,
 #> #   date <date>, keywords <chr>, spatial_coverage <chr>,
 #> #   temporal_coverage <chr>, doi <chr>, cff_version <chr>, url_github <chr>,
