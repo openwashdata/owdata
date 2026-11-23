@@ -13,12 +13,12 @@ Source:
 [`DESCRIPTION`](https://github.com/openwashdata/owdata/blob/main/DESCRIPTION)
 
 Schöbitz L (2026). *owdata: Index of openwashdata R Data Packages*. R
-package version 0.1.0.9003, <https://openwashdata.github.io/owdata/>.
+package version 0.1.0.9004, <https://openwashdata.github.io/owdata/>.
 
     @Manual{,
       title = {owdata: Index of openwashdata R Data Packages},
       author = {Lars Schöbitz},
       year = {2026},
-      note = {R package version 0.1.0.9003},
+      note = {R package version 0.1.0.9004},
       url = {https://openwashdata.github.io/owdata/},
     }
