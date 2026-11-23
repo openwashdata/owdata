@@ -92,10 +92,6 @@
     "url": "https://github.com/openwashdata/guluswm"
   },
   {
-    "package": "gwinfraassess",
-    "url": "https://github.com/openwashdata/gwinfraassess"
-  },
-  {
     "package": "handpumpstatusdata",
     "url": "https://github.com/openwashdata/handpumpstatusdata"
   },
@@ -110,10 +106,6 @@
   {
     "package": "mwefloodresponse",
     "url": "https://github.com/openwashdata/mwefloodresponse"
-  },
-  {
-    "package": "mwgroundwaterdata",
-    "url": "https://github.com/openwashdata/mwgroundwaterdata"
   },
   {
     "package": "nchalohhwatersurvey",
